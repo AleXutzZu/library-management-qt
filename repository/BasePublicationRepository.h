@@ -7,10 +7,24 @@
 
 #include <vector>
 #include "../model/Publication.h"
+#include <memory>
 
 class BasePublicationRepository {
 private:
-    std::vector<Publication *> publications;
+    std::vector<std::shared_ptr<Publication>> publications;
+
+public:
+    BasePublicationRepository() = default;
+
+    virtual void load(const std::string &filePath) = 0;
+
+    virtual void save(const std::string &filePath) = 0;
+
+    void add(const std::shared_ptr<Publication> &publication);
+
+    void removeByTitle(const std::string &title);
+
+    virtual ~BasePublicationRepository() = default;
 };
 
 
