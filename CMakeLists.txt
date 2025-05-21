@@ -26,7 +26,9 @@ add_executable(OOP_Project_LibraryManagement main.cpp
         model/Article.cpp
         model/Article.h
         controller/PublicationController.cpp
-        controller/PublicationController.h)
+        controller/PublicationController.h
+        repository/CsvPublicationRepository.cpp
+        repository/CsvPublicationRepository.h)
 target_link_libraries(OOP_Project_LibraryManagement
         Qt::Core
         Qt::Gui
