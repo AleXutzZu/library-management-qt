@@ -14,7 +14,11 @@ find_package(Qt6 COMPONENTS
         Widgets
         REQUIRED)
 
-add_executable(OOP_Project_LibraryManagement main.cpp)
+add_executable(OOP_Project_LibraryManagement main.cpp
+        repository/BasePublicationRepository.cpp
+        repository/BasePublicationRepository.h
+        model/Publication.cpp
+        model/Publication.h)
 target_link_libraries(OOP_Project_LibraryManagement
         Qt::Core
         Qt::Gui
