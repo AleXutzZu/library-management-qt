@@ -18,7 +18,13 @@ add_executable(OOP_Project_LibraryManagement main.cpp
         repository/BasePublicationRepository.cpp
         repository/BasePublicationRepository.h
         model/Publication.cpp
-        model/Publication.h)
+        model/Publication.h
+        model/Date.cpp
+        model/Date.h
+        model/Book.cpp
+        model/Book.h
+        model/Article.cpp
+        model/Article.h)
 target_link_libraries(OOP_Project_LibraryManagement
         Qt::Core
         Qt::Gui
