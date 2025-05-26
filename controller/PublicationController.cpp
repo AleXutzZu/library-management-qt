@@ -38,3 +38,10 @@ PublicationController::addArticle(const std::string &title, const std::vector<st
         throw;
     }
 }
+
+void PublicationController::undo() {
+    if (actionsStack.empty()) throw std::runtime_error("No actions to undo!");
+
+    actionsStack.top()->executeUndo();
+    actionsStack.pop();
+}

@@ -22,6 +22,8 @@ public:
 
     void addArticle(const std::string &title, const std::vector<std::string> &authors, const Date &date, int citations,
                     const std::string &journal);
+
+    void undo();
 };
 
 
