@@ -14,6 +14,9 @@ void PublicationController::addBook(const std::string &title, const std::vector<
     try {
         auto publication = std::make_shared<Book>(authors, title, date, pages, publisher);
         repository.add(publication);
+
+        auto action = std::make_unique<UndoAdd>(repository, publication);
+        actionsStack.push(std::move(action));
     } catch (const std::invalid_argument &e) {
         //TODO implement logging later
         throw;
@@ -27,6 +30,9 @@ PublicationController::addArticle(const std::string &title, const std::vector<st
     try {
         auto publication = std::make_shared<Article>(authors, title, date, journal, citations);
         repository.add(publication);
+
+        auto action = std::make_unique<UndoAdd>(repository, publication);
+        actionsStack.push(std::move(action));
     } catch (const std::invalid_argument &e) {
         //TODO implement logging later
         throw;
