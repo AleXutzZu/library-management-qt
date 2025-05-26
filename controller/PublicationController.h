@@ -9,10 +9,10 @@
 
 class PublicationController {
 private:
-    std::unique_ptr<BasePublicationRepository> repository;
+    BasePublicationRepository &repository;
 
 public:
-    explicit PublicationController(std::unique_ptr<BasePublicationRepository> repository);
+    explicit PublicationController(BasePublicationRepository &repository);
 };
 
 

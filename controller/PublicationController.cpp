@@ -4,5 +4,4 @@
 
 #include "PublicationController.h"
 
-PublicationController::PublicationController(std::unique_ptr<BasePublicationRepository> repository) : repository(
-        std::move(repository)) {}
+PublicationController::PublicationController(BasePublicationRepository &repository) : repository(repository) {}
