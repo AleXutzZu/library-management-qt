@@ -24,6 +24,8 @@ public:
 
     void removeByTitle(const std::string &title);
 
+    std::shared_ptr<Publication> findByTitle(const std::string &title);
+
     virtual ~BasePublicationRepository() = default;
 };
 
