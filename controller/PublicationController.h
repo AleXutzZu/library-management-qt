@@ -13,6 +13,11 @@ private:
 
 public:
     explicit PublicationController(BasePublicationRepository &repository);
+
+    void addBook(const std::string &title, const std::vector<std::string> &authors, const Date &date, int pages,
+                 const std::string &publisher);
+
+    void addArticle(const std::string &title, const std::vector<std::string> &authors, const Date &date, int citations, const std::string &journal);
 };
 
 
