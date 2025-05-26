@@ -6,10 +6,9 @@
 #include <algorithm>
 
 void BasePublicationRepository::add(const std::shared_ptr<Publication> &publication) {
-    for (const auto &pub: publications) {
-        if (pub->getTitle() == publication->getTitle()) {
-            throw std::invalid_argument("Publication with matching title already exists: " + publication->getTitle());
-        }
+    auto result = findByTitle(publication->getTitle());
+    if (result) {
+        throw std::invalid_argument("Publication with matching title already exists: " + publication->getTitle());
     }
     publications.push_back(publication);
 }
