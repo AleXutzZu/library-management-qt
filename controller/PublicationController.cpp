@@ -45,3 +45,7 @@ void PublicationController::undo() {
     actionsStack.top()->executeUndo();
     actionsStack.pop();
 }
+
+const std::vector<std::shared_ptr<Publication>> &PublicationController::getPublications() const {
+    return repository.getPublications();
+}

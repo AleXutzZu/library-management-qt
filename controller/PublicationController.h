@@ -23,6 +23,8 @@ public:
     void addArticle(const std::string &title, const std::vector<std::string> &authors, const Date &date, int citations,
                     const std::string &journal);
 
+    const std::vector<std::shared_ptr<Publication>>& getPublications() const;
+
     void undo();
 };
 

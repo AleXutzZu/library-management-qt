@@ -26,6 +26,8 @@ public:
 
     std::shared_ptr<Publication> findByTitle(const std::string &title);
 
+    const std::vector<std::shared_ptr<Publication>> &getPublications() const;
+
     virtual ~BasePublicationRepository() = default;
 };
 

@@ -29,3 +29,7 @@ std::shared_ptr<Publication> BasePublicationRepository::findByTitle(const std::s
     if (result == publications.end()) return nullptr;
     return *result;
 }
+
+const std::vector<std::shared_ptr<Publication>> &BasePublicationRepository::getPublications() const {
+    return publications;
+}
