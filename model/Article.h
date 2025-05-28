@@ -19,6 +19,8 @@ public:
     [[nodiscard]] const std::string &getJournal() const;
 
     [[nodiscard]] int getCitations() const;
+
+    [[nodiscard]] std::string getType() const override;
 };
 
 

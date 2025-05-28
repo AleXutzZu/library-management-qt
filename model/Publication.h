@@ -24,6 +24,8 @@ public:
     [[nodiscard]] const std::string &getTitle() const;
 
     [[nodiscard]] const Date &getPublicationDate() const;
+
+    [[nodiscard]] virtual std::string getType() const = 0;
 };
 
 

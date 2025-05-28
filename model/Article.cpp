@@ -17,3 +17,7 @@ const std::string &Article::getJournal() const {
 int Article::getCitations() const {
     return citations;
 }
+
+std::string Article::getType() const {
+    return "Article";
+}

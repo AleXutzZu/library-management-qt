@@ -17,3 +17,7 @@ int Book::getNumberOfPages() const {
 const std::string &Book::getPublisher() const {
     return publisher;
 }
+
+std::string Book::getType() const {
+    return "Book";
+}

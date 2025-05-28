@@ -18,6 +18,8 @@ public:
     [[nodiscard]] int getNumberOfPages() const;
 
     [[nodiscard]] const std::string &getPublisher() const;
+
+    std::string getType() const override;
 };
 
 
