@@ -32,7 +32,9 @@ add_executable(OOP_Project_LibraryManagement main.cpp
         model/UndoAction.cpp
         model/UndoAction.h
         ui/UserInterface.cpp
-        ui/UserInterface.h)
+        ui/UserInterface.h
+        ui/PublicationTableModel.cpp
+        ui/PublicationTableModel.h)
 target_link_libraries(OOP_Project_LibraryManagement
         Qt::Core
         Qt::Gui
