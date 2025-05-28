@@ -30,7 +30,9 @@ add_executable(OOP_Project_LibraryManagement main.cpp
         repository/CsvPublicationRepository.cpp
         repository/CsvPublicationRepository.h
         model/UndoAction.cpp
-        model/UndoAction.h)
+        model/UndoAction.h
+        ui/UserInterface.cpp
+        ui/UserInterface.h)
 target_link_libraries(OOP_Project_LibraryManagement
         Qt::Core
         Qt::Gui

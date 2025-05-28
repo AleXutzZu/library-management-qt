@@ -1,10 +1,18 @@
 #include <QApplication>
-#include <QPushButton>
+#include "controller/PublicationController.h"
+#include "repository/CsvPublicationRepository.h"
+#include "ui/UserInterface.h"
 
 int main(int argc, char *argv[]) {
-    QApplication a(argc, argv);
-    QPushButton button("Hello world!", nullptr);
-    button.resize(200, 100);
-    button.show();
+    CsvPublicationRepository repo;
+    PublicationController controller(repo);
+
+    QApplication app(argc, argv);
+
+    auto *userInterface = new UserInterface(controller);
+
+    userInterface->setMinimumSize({800, 640});
+    userInterface->show();
+
     return QApplication::exec();
 }
