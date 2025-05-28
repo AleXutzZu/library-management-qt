@@ -11,7 +11,7 @@ int main(int argc, char *argv[]) {
 
     auto *userInterface = new UserInterface(controller);
 
-    userInterface->setMinimumSize({800, 640});
+    userInterface->setMinimumSize({1000, 640});
     userInterface->show();
 
     return QApplication::exec();
