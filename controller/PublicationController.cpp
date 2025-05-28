@@ -17,6 +17,7 @@ void PublicationController::addBook(const std::string &title, const std::vector<
 
         auto action = std::make_unique<UndoAdd>(repository, publication);
         actionsStack.push(std::move(action));
+        emit publicationAdded(repository.getPublications().size() - 1);
     } catch (const std::invalid_argument &e) {
         //TODO implement logging later
         throw;
@@ -33,6 +34,7 @@ PublicationController::addArticle(const std::string &title, const std::vector<st
 
         auto action = std::make_unique<UndoAdd>(repository, publication);
         actionsStack.push(std::move(action));
+        emit publicationAdded(repository.getPublications().size() - 1);
     } catch (const std::invalid_argument &e) {
         //TODO implement logging later
         throw;

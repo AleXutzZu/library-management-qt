@@ -8,8 +8,10 @@
 #include "../repository/BasePublicationRepository.h"
 #include "../model/UndoAction.h"
 #include <stack>
+#include <QObject>
 
-class PublicationController {
+class PublicationController : public QObject {
+Q_OBJECT
 private:
     BasePublicationRepository &repository;
     std::stack<std::unique_ptr<UndoAction>> actionsStack;
@@ -23,9 +25,12 @@ public:
     void addArticle(const std::string &title, const std::vector<std::string> &authors, const Date &date, int citations,
                     const std::string &journal);
 
-    const std::vector<std::shared_ptr<Publication>>& getPublications() const;
+    [[nodiscard]] const std::vector<std::shared_ptr<Publication>> &getPublications() const;
 
     void undo();
+
+signals:
+    void publicationAdded(int);
 };
 
 
