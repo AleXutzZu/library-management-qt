@@ -14,6 +14,7 @@
 #include <QLineEdit>
 #include <QGroupBox>
 #include "../controller/PublicationController.h"
+#include "PublicationTableModel.h"
 
 class UserInterface : public QWidget {
 Q_OBJECT
@@ -37,16 +38,22 @@ private:
 
     QComboBox *selectPublicationType;
     QPushButton *addButton;
+    QPushButton *undoButton;
+
+    //Table
+    PublicationTableModel *table;
 
     void setUpUI();
 
     void connectSignals();
 
-public slots:
+private slots:
 
     void onAddButtonClicked();
 
     void onPublicationSelectorChanged(int index);
+
+    void onUndoButtonClicked();
 
 public:
     explicit UserInterface(PublicationController &controller);

@@ -3,7 +3,9 @@
 //
 
 #include <QMessageBox>
+#include <QTableView>
 #include "UserInterface.h"
+#include <QHeaderView>
 
 UserInterface::UserInterface(PublicationController &controller) : controller(controller) {
     setUpUI();
@@ -67,11 +69,27 @@ void UserInterface::setUpUI() {
     formLayout->addRow(bookGroup);
     formLayout->addRow(articleGroup);
 
+    //Table
+    table = new PublicationTableModel(controller, this);
+
+    QTableView *tableView = new QTableView(this);
+
+    tableView->setModel(table);
+    tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     // Main layout
     QVBoxLayout *mainLayout = new QVBoxLayout;
-    mainLayout->addLayout(formLayout);
+
+    QHBoxLayout *formRowLayout = new QHBoxLayout;
+
+    formRowLayout->addLayout(formLayout, 1);
+    formRowLayout->addStretch(1);
+    mainLayout->addLayout(formRowLayout);
     mainLayout->addWidget(addButton);
+
+    mainLayout->addWidget(tableView);
     mainLayout->addStretch();
+
+    setLayout(mainLayout);
 
     setLayout(mainLayout);
     setStyleSheet("QLineEdit { padding: 6px; } QPushButton { padding: 6px; font-weight: bold; }");
@@ -117,7 +135,7 @@ void UserInterface::onAddButtonClicked() {
         return;
     }
 
-    if (!Date::checkValidDate(dateObj.getYear(), dateObj.getMonth(), dateObj.getDay())) {
+    if (!dateObj.isValid()) {
         QMessageBox::warning(this, "Validation Error", "Date does not exist");
         return;
     }
@@ -194,5 +212,13 @@ void UserInterface::onPublicationSelectorChanged(int index) {
     } else {
         bookGroup->setVisible(false);
         articleGroup->setVisible(true);
+    }
+}
+
+void UserInterface::onUndoButtonClicked() {
+    try {
+        controller.undo();
+    } catch (const std::runtime_error &e) {
+        QMessageBox::warning(this, "Error", "There is nothing left to undo!");
     }
 }
