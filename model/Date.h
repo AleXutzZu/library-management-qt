@@ -54,7 +54,9 @@ public:
 
     friend std::istream &operator>>(std::istream &is, Date &date);
 
-    static bool checkValidDate(unsigned int year, unsigned int month, unsigned int day) ;
+    [[nodiscard]] bool isValid() const;
+
+    [[nodiscard]] std::string toString() const;
 };
 
 
