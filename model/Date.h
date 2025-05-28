@@ -53,6 +53,8 @@ public:
     friend std::ostream &operator<<(std::ostream &os, const Date &date);
 
     friend std::istream &operator>>(std::istream &is, Date &date);
+
+    static bool checkValidDate(unsigned int year, unsigned int month, unsigned int day) ;
 };
 
 

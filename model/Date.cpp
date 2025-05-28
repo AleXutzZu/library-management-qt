@@ -6,20 +6,18 @@
 #include "Date.h"
 
 Date::Date(unsigned int year, unsigned int month, unsigned int day) : year(year), month(month), day(day) {
-    if (month < 1 || month > 12) {
-        throw std::invalid_argument("Invalid month: " + std::to_string(month));
-    }
+    bool res = checkValidDate(year, month, day);
+    if (!res) throw std::invalid_argument("Date is invalid");
+}
 
-    if (year < 1) {
-        throw std::invalid_argument("Invalid year: " + std::to_string(year));
-    }
+bool Date::checkValidDate(unsigned int year, unsigned int month, unsigned int day) {
+    if (month < 1 || month > 12) return false;
+    if (year < 1) return false;
 
     unsigned int maxDay = daysInMonth(month, year);
-    if (day < 1 || day > maxDay) {
-        throw std::invalid_argument("Invalid day: " + std::to_string(day) +
-                                    " for month " + std::to_string(month) +
-                                    " in year " + std::to_string(year));
-    }
+    if (day < 1 || day > maxDay) return false;
+
+    return true;
 }
 
 unsigned int Date::getYear() const {
