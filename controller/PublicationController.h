@@ -29,8 +29,12 @@ public:
 
     void undo();
 
+private slots:
+    void onRepositoryDataAdded(int position);
+    void onRepositoryDataRemoved(int position);
 signals:
     void publicationAdded(int);
+    void publicationRemoved(int);
 };
 
 

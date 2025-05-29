@@ -6,7 +6,10 @@
 #include "../model/Book.h"
 #include "../model/Article.h"
 
-PublicationController::PublicationController(BasePublicationRepository &repository) : repository(repository) {}
+PublicationController::PublicationController(BasePublicationRepository &repository) : repository(repository) {
+
+    connect(&repository, &BasePublicationRepository::dataAdded, this, &PublicationController::onRepositoryDataAdded);
+}
 
 void PublicationController::addBook(const std::string &title, const std::vector<std::string> &authors, const Date &date,
                                     int pages, const std::string &publisher) {
@@ -17,7 +20,6 @@ void PublicationController::addBook(const std::string &title, const std::vector<
 
         auto action = std::make_unique<UndoAdd>(repository, publication);
         actionsStack.push(std::move(action));
-        emit publicationAdded(repository.getPublications().size() - 1);
     } catch (const std::invalid_argument &e) {
         //TODO implement logging later
         throw;
@@ -34,7 +36,6 @@ PublicationController::addArticle(const std::string &title, const std::vector<st
 
         auto action = std::make_unique<UndoAdd>(repository, publication);
         actionsStack.push(std::move(action));
-        emit publicationAdded(repository.getPublications().size() - 1);
     } catch (const std::invalid_argument &e) {
         //TODO implement logging later
         throw;
@@ -50,4 +51,12 @@ void PublicationController::undo() {
 
 const std::vector<std::shared_ptr<Publication>> &PublicationController::getPublications() const {
     return repository.getPublications();
+}
+
+void PublicationController::onRepositoryDataAdded(int position) {
+    emit publicationAdded(position);
+}
+
+void PublicationController::onRepositoryDataRemoved(int position) {
+    emit publicationRemoved(position);
 }
