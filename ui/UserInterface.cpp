@@ -66,8 +66,14 @@ void UserInterface::setUpUI() {
 
     bookGroup->setVisible(false);
     articleGroup->setVisible(false);
+
     formLayout->addRow(bookGroup);
     formLayout->addRow(articleGroup);
+
+    QVBoxLayout *formWithButtonLayout = new QVBoxLayout;
+
+    formWithButtonLayout->addLayout(formLayout);
+    formWithButtonLayout->addWidget(addButton);
 
     //Table
     table = new PublicationTableModel(controller, this);
@@ -76,23 +82,35 @@ void UserInterface::setUpUI() {
 
     tableView->setModel(table);
     tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+
+    tableView->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Fixed);
+    tableView->setColumnWidth(0, 50);
+
+    tableView->horizontalHeader()->setSectionResizeMode(3, QHeaderView::Fixed);
+    tableView->setColumnWidth(3, 80);
+
+    tableView->horizontalHeader()->setSectionResizeMode(4, QHeaderView::Fixed);
+    tableView->setColumnWidth(4, 40);
+
+    tableView->horizontalHeader()->setSectionResizeMode(6, QHeaderView::Fixed);
+    tableView->setColumnWidth(6, 60);
+
+    tableView->horizontalHeader()->setSectionResizeMode(8, QHeaderView::Fixed);
+    tableView->setColumnWidth(8, 60);
+
     // Main layout
     QVBoxLayout *mainLayout = new QVBoxLayout;
 
     QHBoxLayout *formRowLayout = new QHBoxLayout;
 
-    formRowLayout->addLayout(formLayout, 1);
+    formRowLayout->addLayout(formWithButtonLayout, 1);
     formRowLayout->addStretch(1);
     mainLayout->addLayout(formRowLayout);
-    mainLayout->addWidget(addButton);
 
     mainLayout->addWidget(tableView);
     mainLayout->addStretch();
 
     setLayout(mainLayout);
-
-    setLayout(mainLayout);
-    setStyleSheet("QLineEdit { padding: 6px; } QPushButton { padding: 6px; font-weight: bold; }");
 }
 
 void UserInterface::connectSignals() {
