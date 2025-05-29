@@ -8,13 +8,15 @@
 #include <vector>
 #include "../model/Publication.h"
 #include <memory>
+#include <QObject>
 
-class BasePublicationRepository {
+class BasePublicationRepository : public QObject {
+Q_OBJECT
 private:
     std::vector<std::shared_ptr<Publication>> publications;
 
 public:
-    BasePublicationRepository() = default;
+    BasePublicationRepository(QObject *parent = nullptr) : QObject(parent) {}
 
     virtual void load(const std::string &filePath) = 0;
 
@@ -29,6 +31,12 @@ public:
     const std::vector<std::shared_ptr<Publication>> &getPublications() const;
 
     virtual ~BasePublicationRepository() = default;
+
+signals:
+
+    void dataAdded(int);
+
+    void dataRemoved(int);
 };
 
 

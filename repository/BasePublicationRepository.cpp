@@ -11,6 +11,7 @@ void BasePublicationRepository::add(const std::shared_ptr<Publication> &publicat
         throw std::invalid_argument("Publication with matching title already exists: " + publication->getTitle());
     }
     publications.push_back(publication);
+    emit dataAdded(publications.size() - 1);
 }
 
 void BasePublicationRepository::removeByTitle(const std::string &title) {
@@ -19,7 +20,9 @@ void BasePublicationRepository::removeByTitle(const std::string &title) {
     });
 
     if (ptr == publications.end()) throw std::invalid_argument("Could not find publication with title: " + title);
+    int position = ptr - publications.begin();
     publications.erase(ptr);
+    emit dataRemoved(position);
 }
 
 std::shared_ptr<Publication> BasePublicationRepository::findByTitle(const std::string &title) {
