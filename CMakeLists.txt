@@ -14,6 +14,8 @@ find_package(Qt6 COMPONENTS
         Widgets
         REQUIRED)
 
+qt6_add_resources(RESOURCES resources/resources.qrc)
+
 add_executable(OOP_Project_LibraryManagement main.cpp
         repository/BasePublicationRepository.cpp
         repository/BasePublicationRepository.h
@@ -34,7 +36,9 @@ add_executable(OOP_Project_LibraryManagement main.cpp
         ui/UserInterface.cpp
         ui/UserInterface.h
         ui/PublicationTableModel.cpp
-        ui/PublicationTableModel.h)
+        ui/PublicationTableModel.h
+        ${RESOURCES}
+)
 target_link_libraries(OOP_Project_LibraryManagement
         Qt::Core
         Qt::Gui

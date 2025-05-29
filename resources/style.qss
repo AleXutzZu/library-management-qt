@@ -1,0 +1,13 @@
+/* style.qss */
+QLineEdit {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 6px;
+}
+
+QPushButton {
+    border: 2px solid #5A9;
+    border-radius: 10px;
+    padding: 6px;
+    background-color: #AFC;
+}
