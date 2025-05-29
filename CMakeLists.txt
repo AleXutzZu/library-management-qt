@@ -38,6 +38,8 @@ add_executable(OOP_Project_LibraryManagement main.cpp
         ui/PublicationTableModel.cpp
         ui/PublicationTableModel.h
         ${RESOURCES}
+        ui/ActionButtonsDelegate.cpp
+        ui/ActionButtonsDelegate.h
 )
 target_link_libraries(OOP_Project_LibraryManagement
         Qt::Core
