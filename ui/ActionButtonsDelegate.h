@@ -24,7 +24,7 @@ signals:
 
     void editClicked(const QModelIndex &index);
 
-    void deleteClicked(const QModelIndex &index);
+    void deleteClicked(const std::string &title);
 };
 
 

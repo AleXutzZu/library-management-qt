@@ -15,6 +15,7 @@
 #include <QGroupBox>
 #include "../controller/PublicationController.h"
 #include "PublicationTableModel.h"
+#include "ActionButtonsDelegate.h"
 
 class UserInterface : public QWidget {
 Q_OBJECT
@@ -42,6 +43,8 @@ private:
 
     //Table
     PublicationTableModel *table;
+    ActionButtonsDelegate *actionButtonsDelegate;
+
 
     void setUpUI();
 
@@ -54,6 +57,8 @@ private slots:
     void onPublicationSelectorChanged(int index);
 
     void onUndoButtonClicked();
+
+    void onDeleteActionButtonClicked(const std::string &title);
 
 public:
     explicit UserInterface(PublicationController &controller);

@@ -35,7 +35,7 @@ void UserInterface::setUpUI() {
 
     //Book specific
     bookGroup = new QGroupBox("Book details", this);
-    QFormLayout *bookFields = new QFormLayout(bookGroup);
+    QFormLayout * bookFields = new QFormLayout(bookGroup);
     publisherEdit = new QLineEdit(this);
     numberOfPagesEdit = new QLineEdit(this);
 
@@ -47,7 +47,7 @@ void UserInterface::setUpUI() {
 
     //Article specific
     articleGroup = new QGroupBox("Article details", this);
-    QFormLayout *articleFields = new QFormLayout(articleGroup);
+    QFormLayout * articleFields = new QFormLayout(articleGroup);
     citationsEdit = new QLineEdit(this);
     journalEdit = new QLineEdit(this);
 
@@ -58,7 +58,7 @@ void UserInterface::setUpUI() {
     journalEdit->setPlaceholderText("Enter journal");
 
     // Create form layout
-    QFormLayout *formLayout = new QFormLayout;
+    QFormLayout * formLayout = new QFormLayout;
     formLayout->addRow("Title:", titleEdit);
     formLayout->addRow("Authors:", authorsEdit);
     formLayout->addRow("Date:", dateEdit);
@@ -70,11 +70,11 @@ void UserInterface::setUpUI() {
     formLayout->addRow(bookGroup);
     formLayout->addRow(articleGroup);
 
-    QVBoxLayout *formWithButtonLayout = new QVBoxLayout;
+    QVBoxLayout * formWithButtonLayout = new QVBoxLayout;
 
     formWithButtonLayout->addLayout(formLayout);
 
-    QHBoxLayout *buttonsLayout = new QHBoxLayout;
+    QHBoxLayout * buttonsLayout = new QHBoxLayout;
 
     undoButton = new QPushButton("Undo", this);
 
@@ -85,11 +85,15 @@ void UserInterface::setUpUI() {
     formWithButtonLayout->addLayout(buttonsLayout);
 
     //Table
+    actionButtonsDelegate = new ActionButtonsDelegate(this);
+
     table = new PublicationTableModel(controller, this);
 
-    QTableView *tableView = new QTableView(this);
+    QTableView * tableView = new QTableView(this);
 
     tableView->setModel(table);
+    tableView->setItemDelegateForColumn(PublicationTableModel::Columns::COL_ACTIONS, actionButtonsDelegate);
+
     tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
     tableView->horizontalHeader()->setSectionResizeMode(PublicationTableModel::Columns::COL_TYPE, QHeaderView::Fixed);
@@ -110,9 +114,9 @@ void UserInterface::setUpUI() {
     tableView->setColumnWidth(PublicationTableModel::Columns::COL_ACTIONS, 60);
 
     // Main layout
-    QVBoxLayout *mainLayout = new QVBoxLayout;
+    QVBoxLayout * mainLayout = new QVBoxLayout;
 
-    QHBoxLayout *formRowLayout = new QHBoxLayout;
+    QHBoxLayout * formRowLayout = new QHBoxLayout;
 
     formRowLayout->addLayout(formWithButtonLayout, 1);
     formRowLayout->addStretch(1);
@@ -128,6 +132,8 @@ void UserInterface::connectSignals() {
     connect(addButton, &QPushButton::clicked, this, &UserInterface::onAddButtonClicked);
     connect(selectPublicationType, &QComboBox::currentIndexChanged, this, &UserInterface::onPublicationSelectorChanged);
     connect(undoButton, &QPushButton::clicked, this, &UserInterface::onUndoButtonClicked);
+    connect(actionButtonsDelegate, &ActionButtonsDelegate::deleteClicked, this,
+            &UserInterface::onDeleteActionButtonClicked);
 }
 
 void UserInterface::onAddButtonClicked() {
@@ -250,5 +256,13 @@ void UserInterface::onUndoButtonClicked() {
         controller.undo();
     } catch (const std::runtime_error &e) {
         QMessageBox::warning(this, "Error", "There is nothing left to undo!");
+    }
+}
+
+void UserInterface::onDeleteActionButtonClicked(const std::string &title) {
+    try {
+        controller.removeByTitle(title);
+    } catch (const std::invalid_argument &e) {
+        QMessageBox::critical(this, "Error", "This publication does not exist");
     }
 }
