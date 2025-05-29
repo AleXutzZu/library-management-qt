@@ -27,6 +27,8 @@ public:
 
     [[nodiscard]] const std::vector<std::shared_ptr<Publication>> &getPublications() const;
 
+    void removeByTitle(const std::string &title);
+
     void undo();
 
 private slots:

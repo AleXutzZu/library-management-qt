@@ -64,3 +64,15 @@ void PublicationController::onRepositoryDataAdded(int position) {
 void PublicationController::onRepositoryDataRemoved(int position) {
     emit publicationRemoved(position);
 }
+
+void PublicationController::removeByTitle(const std::string &title) {
+    try {
+        auto publication = repository.findByTitle(title);
+        repository.removeByTitle(title);
+        auto action = std::make_unique<UndoRemove>(repository, publication);
+        actionsStack.push(std::move(action));
+    } catch (const std::invalid_argument &e) {
+        //TODO implement logging later
+        throw;
+    }
+}
