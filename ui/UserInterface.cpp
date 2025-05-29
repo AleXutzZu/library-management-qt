@@ -73,7 +73,16 @@ void UserInterface::setUpUI() {
     QVBoxLayout *formWithButtonLayout = new QVBoxLayout;
 
     formWithButtonLayout->addLayout(formLayout);
-    formWithButtonLayout->addWidget(addButton);
+
+    QHBoxLayout *buttonsLayout = new QHBoxLayout;
+
+    undoButton = new QPushButton("Undo", this);
+
+    buttonsLayout->addWidget(addButton, 1);
+    buttonsLayout->addStretch(1);
+    buttonsLayout->addWidget(undoButton, 1);
+
+    formWithButtonLayout->addLayout(buttonsLayout);
 
     //Table
     table = new PublicationTableModel(controller, this);
@@ -83,20 +92,22 @@ void UserInterface::setUpUI() {
     tableView->setModel(table);
     tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
-    tableView->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Fixed);
-    tableView->setColumnWidth(0, 50);
+    tableView->horizontalHeader()->setSectionResizeMode(PublicationTableModel::Columns::COL_TYPE, QHeaderView::Fixed);
+    tableView->setColumnWidth(PublicationTableModel::Columns::COL_TYPE, 50);
 
-    tableView->horizontalHeader()->setSectionResizeMode(3, QHeaderView::Fixed);
-    tableView->setColumnWidth(3, 80);
+    tableView->horizontalHeader()->setSectionResizeMode(PublicationTableModel::Columns::COL_DATE, QHeaderView::Fixed);
+    tableView->setColumnWidth(PublicationTableModel::Columns::COL_DATE, 80);
 
-    tableView->horizontalHeader()->setSectionResizeMode(4, QHeaderView::Fixed);
-    tableView->setColumnWidth(4, 40);
+    tableView->horizontalHeader()->setSectionResizeMode(PublicationTableModel::Columns::COL_PAGES, QHeaderView::Fixed);
+    tableView->setColumnWidth(PublicationTableModel::Columns::COL_PAGES, 40);
 
-    tableView->horizontalHeader()->setSectionResizeMode(6, QHeaderView::Fixed);
-    tableView->setColumnWidth(6, 60);
+    tableView->horizontalHeader()->setSectionResizeMode(PublicationTableModel::Columns::COL_CITATIONS,
+                                                        QHeaderView::Fixed);
+    tableView->setColumnWidth(PublicationTableModel::Columns::COL_CITATIONS, 60);
 
-    tableView->horizontalHeader()->setSectionResizeMode(8, QHeaderView::Fixed);
-    tableView->setColumnWidth(8, 60);
+    tableView->horizontalHeader()->setSectionResizeMode(PublicationTableModel::Columns::COL_ACTIONS,
+                                                        QHeaderView::Fixed);
+    tableView->setColumnWidth(PublicationTableModel::Columns::COL_ACTIONS, 60);
 
     // Main layout
     QVBoxLayout *mainLayout = new QVBoxLayout;
@@ -108,7 +119,7 @@ void UserInterface::setUpUI() {
     mainLayout->addLayout(formRowLayout);
 
     mainLayout->addWidget(tableView);
-    mainLayout->addStretch();
+//    mainLayout->addStretch();
 
     setLayout(mainLayout);
 }
@@ -116,6 +127,7 @@ void UserInterface::setUpUI() {
 void UserInterface::connectSignals() {
     connect(addButton, &QPushButton::clicked, this, &UserInterface::onAddButtonClicked);
     connect(selectPublicationType, &QComboBox::currentIndexChanged, this, &UserInterface::onPublicationSelectorChanged);
+    connect(undoButton, &QPushButton::clicked, this, &UserInterface::onUndoButtonClicked);
 }
 
 void UserInterface::onAddButtonClicked() {
