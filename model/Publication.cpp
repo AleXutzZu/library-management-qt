@@ -20,3 +20,27 @@ const std::string &Publication::getTitle() const {
 const Date &Publication::getPublicationDate() const {
     return publicationDate;
 }
+
+std::ostream &operator<<(std::ostream &os, const Publication &publication) {
+    return os << publication.toString();
+}
+
+std::string Publication::toString() const {
+    std::string output;
+
+    output += getType() + ",";
+    output += title + ",";
+    output += publicationDate.toString() + ",";
+    output += join(authors, ";");
+
+    return output;
+}
+
+std::string Publication::join(const std::vector<std::string> &vec, const std::string &sep) {
+    std::ostringstream oss;
+    for (size_t i = 0; i < vec.size(); ++i) {
+        if (i > 0) oss << sep;
+        oss << vec[i];
+    }
+    return oss.str();
+}

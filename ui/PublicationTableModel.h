@@ -15,8 +15,6 @@ Q_OBJECT
 private:
     const PublicationController &controller;
 
-    static std::string join(const std::vector<std::string> &vec, const std::string &sep);
-
 private slots:
 
     void onPublicationAdded(int row);

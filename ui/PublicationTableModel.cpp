@@ -25,7 +25,7 @@ QVariant PublicationTableModel::data(const QModelIndex &index, int role) const {
         case COL_TITLE:
             return QString::fromStdString(publication->getTitle());
         case COL_AUTHORS:
-            return QString::fromStdString(join(publication->getAuthors(), ", "));
+            return QString::fromStdString(Publication::join(publication->getAuthors(), ", "));
         case COL_DATE:
             return QString::fromStdString(publication->getPublicationDate().toString());
 
@@ -57,15 +57,6 @@ QVariant PublicationTableModel::headerData(int section, Qt::Orientation orientat
         return headers.value(section);
     }
     return {};
-}
-
-std::string PublicationTableModel::join(const std::vector<std::string> &vec, const std::string &sep) {
-    std::ostringstream oss;
-    for (size_t i = 0; i < vec.size(); ++i) {
-        if (i > 0) oss << sep;
-        oss << vec[i];
-    }
-    return oss.str();
 }
 
 void PublicationTableModel::onPublicationAdded(int row) {
