@@ -20,6 +20,7 @@ private:
 private slots:
 
     void onPublicationAdded(int row);
+    void onPublicationRemoved(int row);
 
 public:
     explicit PublicationTableModel(const PublicationController &controller,

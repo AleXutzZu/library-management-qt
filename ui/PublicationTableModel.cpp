@@ -77,6 +77,14 @@ PublicationTableModel::PublicationTableModel(const PublicationController &contro
                                              QObject *parent)
         : QAbstractTableModel(parent), controller(controller) {
 
-    connect(&this->controller, &PublicationController::publicationAdded, this, &PublicationTableModel::onPublicationAdded);
+    connect(&this->controller, &PublicationController::publicationAdded, this,
+            &PublicationTableModel::onPublicationAdded);
 
+    connect(&this->controller, &PublicationController::publicationRemoved, this,
+            &PublicationTableModel::onPublicationRemoved);
+}
+
+void PublicationTableModel::onPublicationRemoved(int row) {
+    beginRemoveRows(QModelIndex(), row, row);
+    endRemoveRows();
 }

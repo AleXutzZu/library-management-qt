@@ -8,7 +8,11 @@
 
 PublicationController::PublicationController(BasePublicationRepository &repository) : repository(repository) {
 
-    connect(&repository, &BasePublicationRepository::dataAdded, this, &PublicationController::onRepositoryDataAdded);
+    connect(&repository, &BasePublicationRepository::dataAdded,
+            this, &PublicationController::onRepositoryDataAdded);
+
+    connect(&repository, &BasePublicationRepository::dataRemoved,
+            this, &PublicationController::onRepositoryDataRemoved);
 }
 
 void PublicationController::addBook(const std::string &title, const std::vector<std::string> &authors, const Date &date,
