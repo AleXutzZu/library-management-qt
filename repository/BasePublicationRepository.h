@@ -12,7 +12,7 @@
 
 class BasePublicationRepository : public QObject {
 Q_OBJECT
-private:
+protected:
     std::vector<std::shared_ptr<Publication>> publications;
 
 public:
@@ -31,6 +31,16 @@ public:
     const std::vector<std::shared_ptr<Publication>> &getPublications() const;
 
     virtual ~BasePublicationRepository() = default;
+
+    static std::vector<std::string> tokenize(std::string &&input, char sep = ',') {
+        std::vector<std::string> tokens;
+        std::stringstream stream(std::move(input));
+        std::string token;
+        while (std::getline(stream, token, sep)) {
+            tokens.push_back(std::move(token));
+        }
+        return tokens;
+    }
 
 signals:
 
