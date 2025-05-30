@@ -21,3 +21,7 @@ const std::string &Book::getPublisher() const {
 std::string Book::getType() const {
     return "Book";
 }
+
+std::string Book::toString() const {
+    return Publication::toString() + "," + std::to_string(numberOfPages) + "," + publisher + ",NA,NA";
+}

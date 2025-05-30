@@ -21,3 +21,7 @@ int Article::getCitations() const {
 std::string Article::getType() const {
     return "Article";
 }
+
+std::string Article::toString() const {
+    return Publication::toString() + "," + "NA" + "," + "NA" + "," + std::to_string(citations) + "," + journal;
+}

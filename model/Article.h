@@ -21,6 +21,8 @@ public:
     [[nodiscard]] int getCitations() const;
 
     [[nodiscard]] std::string getType() const override;
+
+    std::string toString() const override;
 };
 
 

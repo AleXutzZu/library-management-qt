@@ -20,6 +20,8 @@ public:
     [[nodiscard]] const std::string &getPublisher() const;
 
     std::string getType() const override;
+
+    std::string toString() const override;
 };
 
 
