@@ -1,0 +1,101 @@
+type,title,date,authors,pages,publisher,citations,journal
+Book,Unique Title 1,08/09/2003,Diana Wang;Charlie Lee;Fiona Davis,759,O'Reilly,NA,NA
+Book,Unique Title 2,29/06/2000,Ethan Brown;Charlie Lee,961,Penguin,NA,NA
+Book,Unique Title 3,06/06/2012,Ethan Brown;Diana Wang,801,Simon & Schuster,NA,NA
+Article,Unique Title 4,21/01/2019,Bob Johnson;Charlie Lee,NA,NA,23,Science
+Book,Unique Title 5,24/07/2012,Fiona Davis;Charlie Lee;Bob Johnson,783,Pearson,NA,NA
+Article,Unique Title 6,19/06/2000,Diana Wang,NA,NA,279,Science
+Book,Unique Title 7,09/10/2022,Diana Wang;Fiona Davis;Ethan Brown,483,Pearson,NA,NA
+Book,Unique Title 8,08/09/2007,Charlie Lee;Alice Smith,426,Pearson,NA,NA
+Article,Unique Title 9,05/03/2001,Bob Johnson;Diana Wang,NA,NA,53,Science
+Article,Unique Title 10,16/12/2016,Charlie Lee,NA,NA,54,Lancet
+Article,Unique Title 11,20/05/2016,Bob Johnson;Charlie Lee;Ethan Brown,NA,NA,102,ACM Computing Surveys
+Book,Unique Title 12,30/09/2019,Diana Wang,722,O'Reilly,NA,NA
+Book,Unique Title 13,23/07/2006,Fiona Davis;Bob Johnson;Diana Wang,865,Penguin,NA,NA
+Book,Unique Title 14,21/07/2011,Ethan Brown;Bob Johnson,476,HarperCollins,NA,NA
+Book,Unique Title 15,07/02/2023,Alice Smith;Bob Johnson,320,Penguin,NA,NA
+Article,Unique Title 16,18/02/2016,Fiona Davis,NA,NA,328,Science
+Article,Unique Title 17,25/09/2014,Charlie Lee;Ethan Brown,NA,NA,109,Science
+Book,Unique Title 18,13/01/2005,Ethan Brown,957,Simon & Schuster,NA,NA
+Book,Unique Title 19,16/12/2012,Bob Johnson;Alice Smith;Charlie Lee,479,Springer,NA,NA
+Book,Unique Title 20,03/12/2024,Fiona Davis;Charlie Lee,367,Simon & Schuster,NA,NA
+Article,Unique Title 21,15/04/2016,Charlie Lee,NA,NA,22,Lancet
+Book,Unique Title 22,12/08/2006,Alice Smith;Charlie Lee,617,Simon & Schuster,NA,NA
+Book,Unique Title 23,29/04/2016,Bob Johnson;Charlie Lee;Fiona Davis,898,Springer,NA,NA
+Book,Unique Title 24,06/11/2016,Alice Smith;Bob Johnson,405,Springer,NA,NA
+Article,Unique Title 25,05/06/2009,Bob Johnson;Ethan Brown;Fiona Davis,NA,NA,346,Nature
+Book,Unique Title 26,28/12/2003,Ethan Brown,825,Springer,NA,NA
+Book,Unique Title 27,11/03/2012,Ethan Brown;Bob Johnson;Fiona Davis,931,Pearson,NA,NA
+Book,Unique Title 28,24/12/2003,Charlie Lee;Ethan Brown,353,HarperCollins,NA,NA
+Article,Unique Title 29,28/02/2003,Charlie Lee;Ethan Brown;Alice Smith,NA,NA,84,Nature
+Article,Unique Title 30,12/10/2022,Fiona Davis;Charlie Lee;Diana Wang,NA,NA,201,Lancet
+Book,Unique Title 31,08/04/2009,Alice Smith,558,Pearson,NA,NA
+Article,Unique Title 32,15/06/2000,Alice Smith;Ethan Brown;Bob Johnson,NA,NA,316,Science
+Book,Unique Title 33,03/06/2015,Diana Wang;Charlie Lee,307,HarperCollins,NA,NA
+Book,Unique Title 34,18/09/2017,Bob Johnson;Ethan Brown,526,Simon & Schuster,NA,NA
+Book,Unique Title 35,31/07/2002,Diana Wang;Charlie Lee;Bob Johnson,623,Simon & Schuster,NA,NA
+Book,Unique Title 36,05/12/2008,Bob Johnson;Diana Wang,787,Simon & Schuster,NA,NA
+Article,Unique Title 37,12/10/2008,Alice Smith;Ethan Brown,NA,NA,110,ACM Computing Surveys
+Article,Unique Title 38,21/04/2010,Ethan Brown,NA,NA,382,Lancet
+Article,Unique Title 39,04/05/2002,Bob Johnson,NA,NA,223,Science
+Article,Unique Title 40,31/03/2020,Ethan Brown,NA,NA,42,Science
+Book,Unique Title 41,07/07/2012,Alice Smith;Charlie Lee;Bob Johnson,228,O'Reilly,NA,NA
+Book,Unique Title 42,20/07/2016,Fiona Davis,372,Springer,NA,NA
+Article,Unique Title 43,20/04/2013,Charlie Lee,NA,NA,486,ACM Computing Surveys
+Article,Unique Title 44,03/03/2018,Fiona Davis;Bob Johnson,NA,NA,377,ACM Computing Surveys
+Article,Unique Title 45,08/10/2020,Diana Wang;Alice Smith;Charlie Lee,NA,NA,319,IEEE Transactions
+Book,Unique Title 46,05/11/2009,Ethan Brown,987,Penguin,NA,NA
+Book,Unique Title 47,19/07/2012,Ethan Brown;Diana Wang;Fiona Davis,263,Penguin,NA,NA
+Book,Unique Title 48,20/10/2016,Ethan Brown,549,O'Reilly,NA,NA
+Article,Unique Title 49,21/01/2003,Alice Smith;Diana Wang,NA,NA,221,IEEE Transactions
+Article,Unique Title 50,30/06/2012,Fiona Davis;Bob Johnson,NA,NA,447,IEEE Transactions
+Book,Unique Title 51,17/04/2019,Ethan Brown,396,Penguin,NA,NA
+Book,Unique Title 52,28/06/2011,Fiona Davis,143,HarperCollins,NA,NA
+Book,Unique Title 53,06/12/2015,Fiona Davis,716,Simon & Schuster,NA,NA
+Article,Unique Title 54,26/06/2004,Ethan Brown;Fiona Davis,NA,NA,477,Nature
+Book,Unique Title 55,22/09/2022,Charlie Lee,385,O'Reilly,NA,NA
+Book,Unique Title 56,01/05/2012,Diana Wang;Fiona Davis,151,Springer,NA,NA
+Book,Unique Title 57,30/10/2019,Charlie Lee;Ethan Brown;Fiona Davis,509,O'Reilly,NA,NA
+Book,Unique Title 58,10/06/2012,Diana Wang;Charlie Lee,682,Penguin,NA,NA
+Book,Unique Title 59,11/11/2012,Fiona Davis;Ethan Brown,964,Penguin,NA,NA
+Article,Unique Title 60,07/07/2013,Diana Wang;Charlie Lee;Bob Johnson,NA,NA,62,Lancet
+Book,Unique Title 61,05/06/2008,Diana Wang,600,Pearson,NA,NA
+Book,Unique Title 62,08/06/2008,Alice Smith;Ethan Brown;Diana Wang,471,Penguin,NA,NA
+Article,Unique Title 63,19/12/2022,Fiona Davis;Alice Smith,NA,NA,215,ACM Computing Surveys
+Article,Unique Title 64,08/04/2012,Diana Wang,NA,NA,464,Nature
+Article,Unique Title 65,06/09/2013,Bob Johnson;Alice Smith,NA,NA,4,Science
+Article,Unique Title 66,23/06/2008,Alice Smith,NA,NA,216,IEEE Transactions
+Book,Unique Title 67,25/10/2007,Ethan Brown;Alice Smith;Bob Johnson,871,Springer,NA,NA
+Book,Unique Title 68,11/04/2005,Diana Wang;Charlie Lee;Alice Smith,769,Springer,NA,NA
+Book,Unique Title 69,05/07/2024,Diana Wang,638,HarperCollins,NA,NA
+Book,Unique Title 70,21/11/2005,Diana Wang;Bob Johnson;Alice Smith,622,O'Reilly,NA,NA
+Book,Unique Title 71,10/08/2008,Fiona Davis;Ethan Brown;Bob Johnson,309,Simon & Schuster,NA,NA
+Article,Unique Title 72,09/07/2011,Fiona Davis,NA,NA,70,IEEE Transactions
+Article,Unique Title 73,30/01/2011,Bob Johnson;Ethan Brown,NA,NA,116,Science
+Book,Unique Title 74,06/10/2017,Fiona Davis;Diana Wang,914,Pearson,NA,NA
+Book,Unique Title 75,05/04/2018,Alice Smith;Charlie Lee;Ethan Brown,198,HarperCollins,NA,NA
+Article,Unique Title 76,21/12/2004,Bob Johnson,NA,NA,135,Lancet
+Article,Unique Title 77,11/08/2001,Alice Smith;Diana Wang;Charlie Lee,NA,NA,226,ACM Computing Surveys
+Article,Unique Title 78,22/03/2009,Charlie Lee;Diana Wang,NA,NA,48,Science
+Book,Unique Title 79,14/06/2001,Ethan Brown;Diana Wang,463,O'Reilly,NA,NA
+Article,Unique Title 80,12/12/2023,Ethan Brown;Diana Wang;Alice Smith,NA,NA,122,Science
+Book,Unique Title 81,16/02/2010,Bob Johnson;Ethan Brown,382,HarperCollins,NA,NA
+Article,Unique Title 82,07/08/2003,Charlie Lee,NA,NA,146,Science
+Article,Unique Title 83,15/05/2011,Fiona Davis,NA,NA,161,Nature
+Article,Unique Title 84,07/05/2006,Fiona Davis;Ethan Brown;Diana Wang,NA,NA,32,Science
+Article,Unique Title 85,07/01/2016,Diana Wang;Ethan Brown;Charlie Lee,NA,NA,238,IEEE Transactions
+Book,Unique Title 86,09/10/2011,Ethan Brown;Diana Wang,144,Pearson,NA,NA
+Article,Unique Title 87,07/06/2020,Fiona Davis,NA,NA,402,IEEE Transactions
+Book,Unique Title 88,24/11/2015,Fiona Davis,166,Simon & Schuster,NA,NA
+Article,Unique Title 89,03/07/2017,Bob Johnson;Alice Smith,NA,NA,214,Lancet
+Book,Unique Title 90,07/03/2018,Ethan Brown;Bob Johnson,188,Springer,NA,NA
+Article,Unique Title 91,26/08/2017,Ethan Brown,NA,NA,243,Lancet
+Article,Unique Title 92,12/11/2011,Alice Smith,NA,NA,214,Nature
+Book,Unique Title 93,17/10/2005,Ethan Brown;Bob Johnson,681,Penguin,NA,NA
+Book,Unique Title 94,01/02/2024,Diana Wang,215,Penguin,NA,NA
+Book,Unique Title 95,15/02/2007,Charlie Lee,890,Springer,NA,NA
+Article,Unique Title 96,04/08/2001,Bob Johnson;Charlie Lee,NA,NA,50,Lancet
+Book,Unique Title 97,03/12/2017,Diana Wang,535,Simon & Schuster,NA,NA
+Article,Unique Title 98,31/01/2016,Fiona Davis,NA,NA,409,IEEE Transactions
+Book,Unique Title 99,24/05/2006,Ethan Brown;Bob Johnson,992,Penguin,NA,NA
+Article,Unique Title 100,20/07/2016,Charlie Lee;Fiona Davis;Alice Smith,NA,NA,478,Nature

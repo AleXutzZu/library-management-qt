@@ -6,6 +6,9 @@
 
 int main(int argc, char *argv[]) {
     CsvPublicationRepository repo;
+
+    repo.load("../publications.csv");
+
     PublicationController controller(repo);
 
     QApplication app(argc, argv);
@@ -15,10 +18,10 @@ int main(int argc, char *argv[]) {
     userInterface->setMinimumSize({1000, 640});
     userInterface->show();
 
-    QFile file(":/style.qss"); // If using Qt resources, else just "style.qss"
+    QFile file(":/style.qss");
     if (file.open(QFile::ReadOnly)) {
         QString styleSheet = QLatin1String(file.readAll());
-        app.setStyleSheet(styleSheet); // Applies to entire application
+        app.setStyleSheet(styleSheet);
     }
 
     return QApplication::exec();
