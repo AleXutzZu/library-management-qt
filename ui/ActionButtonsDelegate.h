@@ -21,9 +21,6 @@ protected:
                      const QModelIndex &index) override;
 
 signals:
-
-    void editClicked(const QModelIndex &index);
-
     void deleteClicked(const std::string &title);
 };
 
