@@ -64,7 +64,7 @@ void PublicationTableModel::onPublicationAdded(int row) {
     endInsertRows();
 }
 
-PublicationTableModel::PublicationTableModel(const PublicationController &controller,
+PublicationTableModel::PublicationTableModel(PublicationController &controller,
                                              QObject *parent)
         : QAbstractTableModel(parent), controller(controller) {
 

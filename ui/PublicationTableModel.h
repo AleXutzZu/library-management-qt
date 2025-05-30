@@ -13,7 +13,7 @@
 class PublicationTableModel : public QAbstractTableModel {
 Q_OBJECT
 private:
-    const PublicationController &controller;
+    PublicationController &controller;
 
 private slots:
 
@@ -21,7 +21,7 @@ private slots:
     void onPublicationRemoved(int row);
 
 public:
-    explicit PublicationTableModel(const PublicationController &controller,
+    explicit PublicationTableModel(PublicationController &controller,
                                    QObject *parent = nullptr);
 
     int rowCount(const QModelIndex &parent) const override;
