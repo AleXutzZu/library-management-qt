@@ -30,15 +30,7 @@ public:
 
     [[nodiscard]] const std::vector<std::shared_ptr<Publication>> &getPublications() const;
 
-    static std::vector<std::string> tokenize(std::string &&input, char sep = ',') {
-        std::vector<std::string> tokens;
-        std::stringstream stream(std::move(input));
-        std::string token;
-        while (std::getline(stream, token, sep)) {
-            tokens.push_back(std::move(token));
-        }
-        return tokens;
-    }
+    static std::vector<std::string> tokenize(std::string &&input, char sep = ',');
 
 signals:
 

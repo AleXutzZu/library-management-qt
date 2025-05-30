@@ -36,3 +36,13 @@ std::shared_ptr<Publication> BasePublicationRepository::findByTitle(const std::s
 const std::vector<std::shared_ptr<Publication>> &BasePublicationRepository::getPublications() const {
     return publications;
 }
+
+std::vector<std::string> BasePublicationRepository::tokenize(std::string &&input, char sep) {
+    std::vector<std::string> tokens;
+    std::stringstream stream(std::move(input));
+    std::string token;
+    while (std::getline(stream, token, sep)) {
+        tokens.push_back(std::move(token));
+    }
+    return tokens;
+}
