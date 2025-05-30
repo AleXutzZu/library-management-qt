@@ -16,7 +16,7 @@ protected:
     std::vector<std::shared_ptr<Publication>> publications;
 
 public:
-    BasePublicationRepository(QObject *parent = nullptr) : QObject(parent) {}
+    explicit BasePublicationRepository(QObject *parent = nullptr) : QObject(parent) {}
 
     virtual void load(const std::string &filePath) = 0;
 
@@ -28,9 +28,7 @@ public:
 
     std::shared_ptr<Publication> findByTitle(const std::string &title);
 
-    const std::vector<std::shared_ptr<Publication>> &getPublications() const;
-
-    virtual ~BasePublicationRepository() = default;
+    [[nodiscard]] const std::vector<std::shared_ptr<Publication>> &getPublications() const;
 
     static std::vector<std::string> tokenize(std::string &&input, char sep = ',') {
         std::vector<std::string> tokens;
