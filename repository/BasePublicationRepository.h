@@ -37,6 +37,8 @@ signals:
     void dataAdded(int);
 
     void dataRemoved(int);
+
+    void dataUpdated(int);
 };
 
 
