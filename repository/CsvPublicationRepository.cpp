@@ -10,7 +10,7 @@
 void CsvPublicationRepository::load(const std::string &filePath) {
     std::ifstream input(filePath);
     if (!input) throw std::runtime_error("Could not open file: " + filePath);
-    //First line should be the header: type, title, date, authors, pages, publication, citations, journal
+    //First line should be the header: type, title, date, authors, pages, publisher, citations, journal
     std::string line;
     std::getline(input, line);
     while (std::getline(input, line)) {
@@ -62,6 +62,11 @@ void CsvPublicationRepository::load(const std::string &filePath) {
 void CsvPublicationRepository::save(const std::string &filePath) {
     std::ofstream output(filePath);
     if (!output) throw std::runtime_error("Could not open file: " + filePath);
-    //TODO Save data
-    //Before doing that we need to implement it at the class level of Publication, Book & Article
+    //First line should be the header: type, title, date, authors, pages, publisher, citations, journal
+    output << "type" << "," << "title" << "," << "date" << "," << "authors" << "," << "pages" << "," << "publisher"
+           << "," << "citations" << "," << "journal" << '\n';
+
+    for (const auto &pub: publications) {
+        output << *pub << '\n';
+    }
 }

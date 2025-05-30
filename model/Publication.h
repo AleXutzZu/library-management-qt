@@ -5,7 +5,6 @@
 #ifndef OOP_PROJECT_LIBRARYMANAGEMENT_PUBLICATION_H
 #define OOP_PROJECT_LIBRARYMANAGEMENT_PUBLICATION_H
 
-#include "../controller/PublicationController.h"
 #include "../model/Publication.h"
 #include <QAbstractTableModel>
 #include <string>
