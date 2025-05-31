@@ -3,8 +3,6 @@
 //
 
 #include "PublicationController.h"
-#include "../model/Book.h"
-#include "../model/Article.h"
 
 PublicationController::PublicationController(BasePublicationRepository &repository) : repository(repository) {
 
@@ -13,6 +11,12 @@ PublicationController::PublicationController(BasePublicationRepository &reposito
 
     connect(&repository, &BasePublicationRepository::dataRemoved,
             this, &PublicationController::onRepositoryDataRemoved);
+
+//    connect(&repository, &BasePublicationRepository::dataUpdated,
+//            this, &PublicationController::onRepositoryDataUpdated);
+
+    connect(&repository, &BasePublicationRepository::dataUpdated,
+            this, &PublicationController::publicationUpdated);
 }
 
 void PublicationController::addBook(const std::string &title, const std::vector<std::string> &authors, const Date &date,
@@ -75,4 +79,29 @@ void PublicationController::removeByTitle(const std::string &title) {
         //TODO implement logging later
         throw;
     }
+}
+
+void PublicationController::updateBook(const std::string &title, BookUpdate &&payload) {
+    auto publication = repository.findByTitle(title);
+    if (publication == nullptr) throw std::invalid_argument("Could not find publication to update: " + title);
+
+    if (publication->getType() != "Book") throw std::invalid_argument("Type mismatch: Book vs Article");
+
+    auto *data = dynamic_cast<Book *>(publication.get());
+
+    auto newBook = payload.intoBook(*data);
+
+    try {
+        repository.update(title, newBook);
+
+        auto action = std::make_unique<UndoUpdate>(repository, publication, newBook);
+        actionsStack.push(std::move(action));
+    } catch (std::invalid_argument &e) {
+        //TODO implement logging later
+        throw;
+    }
+}
+
+void PublicationController::onRepositoryDataUpdated(int position) {
+    emit publicationUpdated(position);
 }

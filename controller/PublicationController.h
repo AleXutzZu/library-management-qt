@@ -7,6 +7,8 @@
 
 #include "../repository/BasePublicationRepository.h"
 #include "../model/UndoAction.h"
+#include "../model/Book.h"
+#include "../model/Article.h"
 #include <stack>
 #include <QObject>
 
@@ -25,6 +27,8 @@ public:
     void addArticle(const std::string &title, const std::vector<std::string> &authors, const Date &date, int citations,
                     const std::string &journal);
 
+    void updateBook(const std::string &title, BookUpdate &&payload);
+
     [[nodiscard]] const std::vector<std::shared_ptr<Publication>> &getPublications() const;
 
     void removeByTitle(const std::string &title);
@@ -32,11 +36,20 @@ public:
     void undo();
 
 private slots:
+
     void onRepositoryDataAdded(int position);
+
     void onRepositoryDataRemoved(int position);
+
+    void onRepositoryDataUpdated(int position);
+
 signals:
+
     void publicationAdded(int);
+
     void publicationRemoved(int);
+
+    void publicationUpdated(int);
 };
 
 
