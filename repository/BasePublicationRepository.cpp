@@ -46,3 +46,18 @@ std::vector<std::string> BasePublicationRepository::tokenize(std::string &&input
     }
     return tokens;
 }
+
+void BasePublicationRepository::update(const std::string &title, const std::shared_ptr<Publication> &publication) {
+    auto target = std::find_if(publications.begin(), publications.end(), [&title](const auto &pub) {
+        return pub->getTitle() == title;
+    });
+    if (target == publications.end()) throw std::invalid_argument("Could not find publication with title: " + title);
+
+    auto unique = findByTitle(publication->getTitle());
+    if (unique != nullptr) throw std::invalid_argument("Publication title is not unique: " + publication->getTitle());
+
+    if ((*target)->getType() != publication->getType()) throw std::invalid_argument("Type mismatch: Book vs Article");
+    int position = target - publications.begin();
+    *target = publication;
+    emit dataUpdated(position);
+}

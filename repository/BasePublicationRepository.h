@@ -24,6 +24,8 @@ public:
 
     void add(const std::shared_ptr<Publication> &publication);
 
+    void update(const std::string &title, const std::shared_ptr<Publication> &publication);
+
     void removeByTitle(const std::string &title);
 
     std::shared_ptr<Publication> findByTitle(const std::string &title);
