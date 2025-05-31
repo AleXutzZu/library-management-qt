@@ -25,4 +25,11 @@ public:
 };
 
 
+struct BookUpdate: public PublicationUpdate {
+    std::optional<int> numberOfPages;
+    std::optional<std::string> publisher;
+
+    std::shared_ptr<Book> intoBook(const Book &book) const;
+};
+
 #endif //OOP_PROJECT_LIBRARYMANAGEMENT_BOOK_H

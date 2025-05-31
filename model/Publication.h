@@ -10,6 +10,7 @@
 #include <string>
 #include <vector>
 #include "Date.h"
+#include <optional>
 
 class Publication {
 protected:
@@ -35,5 +36,10 @@ public:
     friend std::ostream &operator<<(std::ostream &os, const Publication &publication);
 };
 
+struct PublicationUpdate {
+    std::optional<std::string> title;
+    std::optional<std::vector<std::string>> authors;
+    std::optional<Date> publicationDate;
+};
 
 #endif //OOP_PROJECT_LIBRARYMANAGEMENT_PUBLICATION_H

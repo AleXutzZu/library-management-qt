@@ -25,5 +25,11 @@ public:
     std::string toString() const override;
 };
 
+struct ArticleUpdate : public PublicationUpdate {
+    std::optional<std::string> journal;
+    std::optional<int> citations;
+
+    std::shared_ptr<Article> intoArticle(const Article &article) const;
+};
 
 #endif //OOP_PROJECT_LIBRARYMANAGEMENT_ARTICLE_H

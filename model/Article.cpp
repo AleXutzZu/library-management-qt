@@ -25,3 +25,14 @@ std::string Article::getType() const {
 std::string Article::toString() const {
     return Publication::toString() + "," + "NA" + "," + "NA" + "," + std::to_string(citations) + "," + journal;
 }
+
+std::shared_ptr<Article> ArticleUpdate::intoArticle(const Article &article) const {
+    std::string newTitle = title.value_or(article.getTitle());
+    std::vector<std::string> newAuthors = authors.value_or(article.getAuthors());
+    Date newDate = publicationDate.value_or(article.getPublicationDate());
+    int citationsCount = citations.value_or(article.getCitations());
+    std::string newJournal = journal.value_or(article.getJournal());
+
+    return std::make_shared<Article>(newAuthors, newTitle, newDate, newJournal, citationsCount);
+}
+
