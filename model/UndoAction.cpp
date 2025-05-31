@@ -20,3 +20,10 @@ void UndoRemove::executeUndo() {
 
 UndoRemove::UndoRemove(BasePublicationRepository &repository, const std::shared_ptr<Publication> &item) : UndoAction(
         repository, item) {}
+
+UndoUpdate::UndoUpdate(BasePublicationRepository &repository, const std::shared_ptr<Publication> &item,
+                       const std::shared_ptr<Publication> &oldItem) : UndoAction(repository, item), oldItem(oldItem) {}
+
+void UndoUpdate::executeUndo() {
+    repository.update(item->getTitle(), oldItem);
+}

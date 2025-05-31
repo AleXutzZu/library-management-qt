@@ -36,4 +36,14 @@ public:
     void executeUndo() override;
 };
 
+class UndoUpdate: public UndoAction {
+private:
+    std::shared_ptr<Publication> oldItem;
+public:
+    UndoUpdate(BasePublicationRepository &repository, const std::shared_ptr<Publication> &item,
+               const std::shared_ptr<Publication> &oldItem);
+
+    void executeUndo() override;
+};
+
 #endif //OOP_PROJECT_LIBRARYMANAGEMENT_UNDOACTION_H
