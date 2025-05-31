@@ -24,5 +24,9 @@ int main(int argc, char *argv[]) {
         app.setStyleSheet(styleSheet);
     }
 
+    QObject::connect(qApp, &QCoreApplication::aboutToQuit, [&repo]() {
+        repo.save("../publications.csv");
+    });
+
     return QApplication::exec();
 }
