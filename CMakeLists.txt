@@ -40,6 +40,8 @@ add_executable(OOP_Project_LibraryManagement main.cpp
         ${RESOURCES}
         ui/ActionButtonsDelegate.cpp
         ui/ActionButtonsDelegate.h
+        ui/DateEditDelegate.cpp
+        ui/DateEditDelegate.h
 )
 target_link_libraries(OOP_Project_LibraryManagement
         Qt::Core

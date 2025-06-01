@@ -5,6 +5,7 @@
 #include <QMessageBox>
 #include <QTableView>
 #include "UserInterface.h"
+#include "DateEditDelegate.h"
 #include <QHeaderView>
 
 UserInterface::UserInterface(PublicationController &controller) : controller(controller) {
@@ -86,13 +87,16 @@ void UserInterface::setUpUI() {
 
     //Table
     actionButtonsDelegate = new ActionButtonsDelegate(this);
+    auto dateEditDelegate = new DateEditDelegate(this);
 
     table = new PublicationTableModel(controller, this);
 
-    QTableView * tableView = new QTableView(this);
+    QTableView *tableView = new QTableView(this);
 
     tableView->setModel(table);
     tableView->setItemDelegateForColumn(PublicationTableModel::Columns::COL_ACTIONS, actionButtonsDelegate);
+    tableView->setItemDelegateForColumn(PublicationTableModel::Columns::COL_DATE, dateEditDelegate);
+
 
     tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 
