@@ -2,6 +2,7 @@
 // Created by AleXutzZu on 29/05/2025.
 //
 
+#include <QMessageBox>
 #include "PublicationTableModel.h"
 #include "../model/Book.h"
 #include "../model/Article.h"
@@ -117,6 +118,7 @@ bool PublicationTableModel::setData(const QModelIndex &index, const QVariant &va
     if (publication->getType() == "Book") {
         BookUpdate payload;
         std::vector<std::string> authorsVec;
+        bool result;
         switch (index.column()) {
             case COL_TITLE:
                 payload.title = value.toString().trimmed().toStdString();
@@ -128,33 +130,39 @@ bool PublicationTableModel::setData(const QModelIndex &index, const QVariant &va
                 payload.authors = authorsVec;
                 break;
             case COL_DATE:
-                //TODO
-                return false;
+                try {
+                    payload.publicationDate = Date(value.toString().trimmed().toStdString());
+                } catch (std::invalid_argument &e) {
+                    return false;
+                }
                 break;
             case COL_PUBLISHER:
                 payload.publisher = value.toString().trimmed().toStdString();
                 if (payload.publisher.value().empty()) return false;
                 break;
             case COL_PAGES:
-                //TODO
-                return false;
+                payload.numberOfPages = value.toInt(&result);
+                if (!result || payload.numberOfPages <= 0) {
+                    return false;
+                }
                 break;
         }
         try {
             controller.updateBook(publication->getTitle(), std::move(payload));
         } catch (std::invalid_argument &e) {
-            //TODO
             return false;
         }
         return true;
     } else {
         ArticleUpdate payload;
         std::vector<std::string> authorsVec;
-
+        bool result;
         switch (index.column()) {
             case COL_TITLE:
                 payload.title = value.toString().trimmed().toStdString();
-                if (payload.title.value().empty()) return false;
+                if (payload.title.value().empty()) {
+                    return false;
+                }
                 break;
             case COL_AUTHORS:
                 authorsVec = BasePublicationRepository::tokenize(value.toString().trimmed().toStdString(), ';');
@@ -162,22 +170,26 @@ bool PublicationTableModel::setData(const QModelIndex &index, const QVariant &va
                 payload.authors = authorsVec;
                 break;
             case COL_DATE:
-                //TODO
-                return false;
+                try {
+                    payload.publicationDate = Date(value.toString().trimmed().toStdString());
+                } catch (std::invalid_argument &e) {
+                    return false;
+                }
                 break;
             case COL_JOURNAL:
                 payload.journal = value.toString().trimmed().toStdString();
                 if (payload.journal.value().empty()) return false;
                 break;
-            case COL_PAGES:
-                //TODO
-                return false;
+            case COL_CITATIONS:
+                payload.citations = value.toInt(&result);
+                if (!result || payload.citations <= 0) {
+                    return false;
+                }
                 break;
         }
         try {
             controller.updateArticle(publication->getTitle(), std::move(payload));
         } catch (std::invalid_argument &e) {
-            //TODO
             return false;
         }
         return true;
