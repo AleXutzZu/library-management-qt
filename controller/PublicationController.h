@@ -34,15 +34,6 @@ public:
     void removeByTitle(const std::string &title);
 
     void undo();
-
-private slots:
-
-    void onRepositoryDataAdded(int position);
-
-    void onRepositoryDataRemoved(int position);
-
-    void onRepositoryDataUpdated(int position);
-
 signals:
 
     void publicationAdded(int);

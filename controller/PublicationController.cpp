@@ -7,13 +7,10 @@
 PublicationController::PublicationController(BasePublicationRepository &repository) : repository(repository) {
 
     connect(&repository, &BasePublicationRepository::dataAdded,
-            this, &PublicationController::onRepositoryDataAdded);
+            this, &PublicationController::publicationAdded);
 
     connect(&repository, &BasePublicationRepository::dataRemoved,
-            this, &PublicationController::onRepositoryDataRemoved);
-
-//    connect(&repository, &BasePublicationRepository::dataUpdated,
-//            this, &PublicationController::onRepositoryDataUpdated);
+            this, &PublicationController::publicationRemoved);
 
     connect(&repository, &BasePublicationRepository::dataUpdated,
             this, &PublicationController::publicationUpdated);
@@ -61,14 +58,6 @@ const std::vector<std::shared_ptr<Publication>> &PublicationController::getPubli
     return repository.getPublications();
 }
 
-void PublicationController::onRepositoryDataAdded(int position) {
-    emit publicationAdded(position);
-}
-
-void PublicationController::onRepositoryDataRemoved(int position) {
-    emit publicationRemoved(position);
-}
-
 void PublicationController::removeByTitle(const std::string &title) {
     try {
         auto publication = repository.findByTitle(title);
@@ -100,8 +89,4 @@ void PublicationController::updateBook(const std::string &title, BookUpdate &&pa
         //TODO implement logging later
         throw;
     }
-}
-
-void PublicationController::onRepositoryDataUpdated(int position) {
-    emit publicationUpdated(position);
 }
