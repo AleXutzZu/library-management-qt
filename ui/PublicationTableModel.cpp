@@ -79,3 +79,106 @@ void PublicationTableModel::onPublicationRemoved(int row) {
     beginRemoveRows(QModelIndex(), row, row);
     endRemoveRows();
 }
+
+Qt::ItemFlags PublicationTableModel::flags(const QModelIndex &index) const {
+    auto defaultFlags = QAbstractTableModel::flags(index);
+
+    if (index.isValid()) {
+        //Disable article fields for book rows and vice versa
+        auto publication = controller.getPublications()[index.row()];
+        if (publication->getType() == "Book") {
+            if (index.column() == COL_JOURNAL || index.column() == COL_CITATIONS) return defaultFlags;
+        }
+
+        if (publication->getType() == "Article") {
+            if (index.column() == COL_PAGES || index.column() == COL_PUBLISHER) return defaultFlags;
+        }
+
+        switch (index.column()) {
+            case COL_TYPE:
+            case COL_ACTIONS:
+                return defaultFlags;
+            default:
+                return defaultFlags | Qt::ItemIsEditable;
+        }
+    }
+    return defaultFlags;
+}
+
+bool PublicationTableModel::setData(const QModelIndex &index, const QVariant &value, int role) {
+    if (!index.isValid() || role != Qt::EditRole) return false;
+
+    int row = index.row();
+    auto publication = controller.getPublications()[row];
+
+    if (publication->getType() == "Book") {
+        BookUpdate payload;
+        std::vector<std::string> authorsVec;
+        switch (index.column()) {
+            case COL_TITLE:
+                payload.title = value.toString().trimmed().toStdString();
+                if (payload.title.value().empty()) return false;
+                break;
+            case COL_AUTHORS:
+                authorsVec = BasePublicationRepository::tokenize(value.toString().trimmed().toStdString(), ';');
+                if (authorsVec.empty()) return false;
+                payload.authors = authorsVec;
+                break;
+            case COL_DATE:
+                //TODO
+                return false;
+                break;
+            case COL_PUBLISHER:
+                payload.publisher = value.toString().trimmed().toStdString();
+                if (payload.publisher.value().empty()) return false;
+                break;
+            case COL_PAGES:
+                //TODO
+                return false;
+                break;
+        }
+        try {
+            controller.updateBook(publication->getTitle(), std::move(payload));
+            emit dataChanged(index, index, {Qt::DisplayRole, Qt::EditRole});
+        } catch (std::invalid_argument &e) {
+            //TODO
+            return false;
+        }
+        return true;
+    } else {
+        ArticleUpdate payload;
+        std::vector<std::string> authorsVec;
+
+        switch (index.column()) {
+            case COL_TITLE:
+                payload.title = value.toString().trimmed().toStdString();
+                if (payload.title.value().empty()) return false;
+                break;
+            case COL_AUTHORS:
+                authorsVec = BasePublicationRepository::tokenize(value.toString().trimmed().toStdString(), ';');
+                if (authorsVec.empty()) return false;
+                payload.authors = authorsVec;
+                break;
+            case COL_DATE:
+                //TODO
+                return false;
+                break;
+            case COL_JOURNAL:
+                payload.journal = value.toString().trimmed().toStdString();
+                if (payload.journal.value().empty()) return false;
+                break;
+            case COL_PAGES:
+                //TODO
+                return false;
+                break;
+        }
+        try {
+            controller.updateArticle(publication->getTitle(), std::move(payload));
+            emit dataChanged(index, index, {Qt::DisplayRole, Qt::EditRole});
+        } catch (std::invalid_argument &e) {
+            //TODO
+            return false;
+        }
+        return true;
+    }
+}
