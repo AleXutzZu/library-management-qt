@@ -44,6 +44,8 @@ public:
 
     Date(unsigned int year, unsigned int month, unsigned int day);
 
+    Date(const std::string &formattedString);
+
     [[nodiscard]] unsigned int getYear() const;
 
     [[nodiscard]] unsigned int getMonth() const;

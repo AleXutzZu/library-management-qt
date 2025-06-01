@@ -4,6 +4,7 @@
 
 #include <stdexcept>
 #include "Date.h"
+#include <sstream>
 
 Date::Date(unsigned int year, unsigned int month, unsigned int day) : year(year), month(month), day(day) {
     bool res = isValid();
@@ -45,4 +46,10 @@ std::istream &operator>>(std::istream &is, Date &date) {
 
 std::string Date::toString() const {
     return std::to_string(day) + "/" + std::to_string(month) + "/" + std::to_string(year);
+}
+
+Date::Date(const std::string &formattedString) {
+    std::stringstream str(formattedString);
+    str >> (*this);
+    if (!isValid()) throw std::invalid_argument("Date is invalid");
 }
