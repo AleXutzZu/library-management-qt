@@ -29,6 +29,8 @@ public:
 
     void updateBook(const std::string &title, BookUpdate &&payload);
 
+    void updateArticle(const std::string &title, ArticleUpdate &&payload);
+
     [[nodiscard]] const std::vector<std::shared_ptr<Publication>> &getPublications() const;
 
     void removeByTitle(const std::string &title);

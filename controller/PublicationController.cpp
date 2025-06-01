@@ -90,3 +90,24 @@ void PublicationController::updateBook(const std::string &title, BookUpdate &&pa
         throw;
     }
 }
+
+void PublicationController::updateArticle(const std::string &title, ArticleUpdate &&payload) {
+    auto publication = repository.findByTitle(title);
+    if (publication == nullptr) throw std::invalid_argument("Could not find publication to update: " + title);
+
+    if (publication->getType() != "Article") throw std::invalid_argument("Type mismatch: Book vs Article");
+
+    auto *data = dynamic_cast<Article *>(publication.get());
+
+    auto newBook = payload.intoArticle(*data);
+
+    try {
+        repository.update(title, newBook);
+
+        auto action = std::make_unique<UndoUpdate>(repository, publication, newBook);
+        actionsStack.push(std::move(action));
+    } catch (std::invalid_argument &e) {
+        //TODO implement logging later
+        throw;
+    }
+}
