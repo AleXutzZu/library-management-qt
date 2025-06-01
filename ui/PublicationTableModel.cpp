@@ -3,6 +3,7 @@
 //
 
 #include <QMessageBox>
+#include <QRegularExpression>
 #include "PublicationTableModel.h"
 #include "../model/Book.h"
 #include "../model/Article.h"
@@ -115,6 +116,8 @@ bool PublicationTableModel::setData(const QModelIndex &index, const QVariant &va
     int row = index.row();
     auto publication = controller.getPublications()[row];
 
+    static QRegularExpression regex("^(\s*[A-Za-z]+(\s+[A-Za-z]+)*\s*)(;\s*[A-Za-z]+(\s+[A-Za-z]+)*\s*)*$");
+
     if (publication->getType() == "Book") {
         BookUpdate payload;
         std::vector<std::string> authorsVec;
@@ -125,6 +128,7 @@ bool PublicationTableModel::setData(const QModelIndex &index, const QVariant &va
                 if (payload.title.value().empty()) return false;
                 break;
             case COL_AUTHORS:
+                if (!regex.match(value.toString()).hasMatch()) return false;
                 authorsVec = BasePublicationRepository::tokenize(value.toString().trimmed().toStdString(), ';');
                 if (authorsVec.empty()) return false;
                 payload.authors = authorsVec;
@@ -142,7 +146,7 @@ bool PublicationTableModel::setData(const QModelIndex &index, const QVariant &va
                 break;
             case COL_PAGES:
                 payload.numberOfPages = value.toInt(&result);
-                if (!result || payload.numberOfPages <= 0) {
+                if (!result || payload.numberOfPages.value() <= 0) {
                     return false;
                 }
                 break;
@@ -165,6 +169,7 @@ bool PublicationTableModel::setData(const QModelIndex &index, const QVariant &va
                 }
                 break;
             case COL_AUTHORS:
+                if (!regex.match(value.toString()).hasMatch()) return false;
                 authorsVec = BasePublicationRepository::tokenize(value.toString().trimmed().toStdString(), ';');
                 if (authorsVec.empty()) return false;
                 payload.authors = authorsVec;
@@ -182,7 +187,7 @@ bool PublicationTableModel::setData(const QModelIndex &index, const QVariant &va
                 break;
             case COL_CITATIONS:
                 payload.citations = value.toInt(&result);
-                if (!result || payload.citations <= 0) {
+                if (!result || payload.citations.value() <= 0) {
                     return false;
                 }
                 break;
