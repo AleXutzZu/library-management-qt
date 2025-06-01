@@ -25,5 +25,5 @@ UndoUpdate::UndoUpdate(BasePublicationRepository &repository, const std::shared_
                        const std::shared_ptr<Publication> &oldItem) : UndoAction(repository, item), oldItem(oldItem) {}
 
 void UndoUpdate::executeUndo() {
-    repository.update(item->getTitle(), oldItem);
+    repository.update(oldItem->getTitle(), item);
 }
