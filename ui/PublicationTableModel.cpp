@@ -73,6 +73,9 @@ PublicationTableModel::PublicationTableModel(PublicationController &controller,
 
     connect(&this->controller, &PublicationController::publicationRemoved, this,
             &PublicationTableModel::onPublicationRemoved);
+
+    connect(&this->controller, &PublicationController::publicationUpdated, this,
+            &PublicationTableModel::onPublicationUpdated);
 }
 
 void PublicationTableModel::onPublicationRemoved(int row) {
@@ -139,7 +142,6 @@ bool PublicationTableModel::setData(const QModelIndex &index, const QVariant &va
         }
         try {
             controller.updateBook(publication->getTitle(), std::move(payload));
-            emit dataChanged(index, index, {Qt::DisplayRole, Qt::EditRole});
         } catch (std::invalid_argument &e) {
             //TODO
             return false;
@@ -174,11 +176,16 @@ bool PublicationTableModel::setData(const QModelIndex &index, const QVariant &va
         }
         try {
             controller.updateArticle(publication->getTitle(), std::move(payload));
-            emit dataChanged(index, index, {Qt::DisplayRole, Qt::EditRole});
         } catch (std::invalid_argument &e) {
             //TODO
             return false;
         }
         return true;
     }
+}
+
+void PublicationTableModel::onPublicationUpdated(int row) {
+    auto tl = index(row, 0);
+    auto br = index(row, COL_COUNT - 1);
+    emit dataChanged(tl, br, {Qt::DisplayRole, Qt::EditRole});
 }

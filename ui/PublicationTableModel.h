@@ -19,7 +19,7 @@ private slots:
 
     void onPublicationAdded(int row);
     void onPublicationRemoved(int row);
-
+    void onPublicationUpdated(int row);
 public:
     explicit PublicationTableModel(PublicationController &controller,
                                    QObject *parent = nullptr);
