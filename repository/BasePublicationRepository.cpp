@@ -54,7 +54,7 @@ void BasePublicationRepository::update(const std::string &title, const std::shar
     if (target == publications.end()) throw std::invalid_argument("Could not find publication with title: " + title);
 
     auto unique = findByTitle(publication->getTitle());
-    if (unique != nullptr) throw std::invalid_argument("Publication title is not unique: " + publication->getTitle());
+    if (unique != nullptr && title != publication->getTitle()) throw std::invalid_argument("Publication title is not unique: " + publication->getTitle());
 
     if ((*target)->getType() != publication->getType()) throw std::invalid_argument("Type mismatch: Book vs Article");
     int position = target - publications.begin();
