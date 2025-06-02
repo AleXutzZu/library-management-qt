@@ -16,6 +16,8 @@ UserInterface::UserInterface(PublicationController &controller) : controller(con
 void UserInterface::setUpUI() {
     this->setWindowTitle("Library Management");
 
+    undoShortcut = new QShortcut(QKeySequence("Ctrl+Z"), this);
+
     // Create widgets
     titleEdit = new QLineEdit(this);
     authorsEdit = new QLineEdit(this);
@@ -138,6 +140,7 @@ void UserInterface::connectSignals() {
     connect(undoButton, &QPushButton::clicked, this, &UserInterface::onUndoButtonClicked);
     connect(actionButtonsDelegate, &ActionButtonsDelegate::deleteClicked, this,
             &UserInterface::onDeleteActionButtonClicked);
+    connect(undoShortcut, &QShortcut::activated, undoButton, &QPushButton::click);
 }
 
 void UserInterface::onAddButtonClicked() {

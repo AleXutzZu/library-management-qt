@@ -13,6 +13,8 @@
 #include <QComboBox>
 #include <QLineEdit>
 #include <QGroupBox>
+#include <QRadioButton>
+#include <QShortcut>
 #include "../controller/PublicationController.h"
 #include "PublicationTableModel.h"
 #include "ActionButtonsDelegate.h"
@@ -45,7 +47,8 @@ private:
     PublicationTableModel *table;
     ActionButtonsDelegate *actionButtonsDelegate;
 
-
+    QRadioButton *filterAndButton;
+    QShortcut *undoShortcut;
     void setUpUI();
 
     void connectSignals();
