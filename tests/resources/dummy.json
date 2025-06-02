@@ -1,0 +1,1094 @@
+[
+    {
+        "authors": [
+            "Dave Taylor",
+            "Alice Johnson"
+        ],
+        "citations": 30,
+        "date": "15/11/2017",
+        "journal": "IEEE Transactions",
+        "title": "Behavioral Economics 7441",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Alice White"
+        ],
+        "date": "13/1/2016",
+        "numberOfPages": 0,
+        "publisher": "Cambridge Press",
+        "title": "Quantum Mechanics 4556",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Grace Thomas"
+        ],
+        "date": "28/11/2018",
+        "numberOfPages": 0,
+        "publisher": "Springer",
+        "title": "Quantum Mechanics 8195",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Bob Brown"
+        ],
+        "date": "25/5/2017",
+        "numberOfPages": 0,
+        "publisher": "Pearson",
+        "title": "Renewable Energy 5454",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Judy Taylor",
+            "Dave Jackson"
+        ],
+        "citations": 198,
+        "date": "3/6/2016",
+        "journal": "IEEE Transactions",
+        "title": "Philosophy of Mind 6151",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Bob White",
+            "Bob Smith"
+        ],
+        "date": "6/1/2023",
+        "numberOfPages": 0,
+        "publisher": "Cambridge Press",
+        "title": "Foundations of AI 6488",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Heidi Thomas"
+        ],
+        "citations": 371,
+        "date": "19/1/2017",
+        "journal": "ACM Journal",
+        "title": "Distributed Computing 3301",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Judy Anderson",
+            "Frank Thomas"
+        ],
+        "citations": 286,
+        "date": "18/7/2019",
+        "journal": "IEEE Transactions",
+        "title": "Genomics and You 3885",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Frank White",
+            "Ivan Jackson",
+            "Frank Anderson"
+        ],
+        "date": "18/2/2021",
+        "numberOfPages": 0,
+        "publisher": "Springer",
+        "title": "Genomics and You 571",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Alice Brown"
+        ],
+        "date": "12/11/2024",
+        "numberOfPages": 0,
+        "publisher": "Pearson",
+        "title": "Philosophy of Mind 1307",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Carol White",
+            "Ivan Johnson"
+        ],
+        "date": "24/7/2023",
+        "numberOfPages": 0,
+        "publisher": "O'Reilly",
+        "title": "Deep Learning Systems 6274",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Bob Thomas",
+            "Carol Taylor",
+            "Heidi Taylor"
+        ],
+        "date": "4/1/2015",
+        "numberOfPages": 0,
+        "publisher": "Pearson",
+        "title": "Modern Operating Systems 2484",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Ivan Johnson"
+        ],
+        "date": "11/6/2024",
+        "numberOfPages": 0,
+        "publisher": "Springer",
+        "title": "Renewable Energy 8921",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Bob Brown",
+            "Judy Anderson"
+        ],
+        "date": "2/5/2023",
+        "numberOfPages": 0,
+        "publisher": "Pearson",
+        "title": "Quantum Mechanics 9816",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Judy Anderson",
+            "Bob Thomas",
+            "Eve Johnson"
+        ],
+        "citations": 136,
+        "date": "19/11/2019",
+        "journal": "ACM Journal",
+        "title": "World History 3567",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Frank Jackson"
+        ],
+        "citations": 365,
+        "date": "22/7/2024",
+        "journal": "ACM Journal",
+        "title": "Philosophy of Mind 4801",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Eve Taylor",
+            "Eve Smith",
+            "Heidi Jackson"
+        ],
+        "date": "6/3/2015",
+        "numberOfPages": 0,
+        "publisher": "Cambridge Press",
+        "title": "Cryptography Explained 7427",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Carol Jackson",
+            "Ivan Taylor",
+            "Dave Smith"
+        ],
+        "date": "22/12/2018",
+        "numberOfPages": 0,
+        "publisher": "O'Reilly",
+        "title": "Exploring Data 3577",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Carol Anderson",
+            "Bob Brown"
+        ],
+        "date": "29/9/2022",
+        "numberOfPages": 0,
+        "publisher": "Pearson",
+        "title": "Climate Science 846",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Ivan Johnson",
+            "Dave White",
+            "Carol Smith"
+        ],
+        "date": "29/3/2021",
+        "numberOfPages": 0,
+        "publisher": "Cambridge Press",
+        "title": "Foundations of AI 18",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Ivan Thomas",
+            "Frank Brown"
+        ],
+        "citations": 496,
+        "date": "22/12/2017",
+        "journal": "Science",
+        "title": "Quantum Mechanics 3564",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Alice Jackson"
+        ],
+        "citations": 425,
+        "date": "27/2/2023",
+        "journal": "Nature",
+        "title": "Philosophy of Mind 1624",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Carol Jackson",
+            "Dave Taylor"
+        ],
+        "date": "19/3/2015",
+        "numberOfPages": 0,
+        "publisher": "Springer",
+        "title": "Digital Security 1590",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Dave Jackson"
+        ],
+        "citations": 108,
+        "date": "22/6/2024",
+        "journal": "IEEE Transactions",
+        "title": "Foundations of AI 4660",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Ivan Taylor",
+            "Dave Taylor",
+            "Frank Anderson"
+        ],
+        "date": "3/9/2015",
+        "numberOfPages": 0,
+        "publisher": "Springer",
+        "title": "Digital Security 5411",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Frank Brown",
+            "Frank Anderson",
+            "Ivan Thomas"
+        ],
+        "citations": 315,
+        "date": "17/9/2023",
+        "journal": "Nature",
+        "title": "Digital Security 8145",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Alice White",
+            "Alice Jackson",
+            "Alice Thomas"
+        ],
+        "date": "14/3/2015",
+        "numberOfPages": 0,
+        "publisher": "Pearson",
+        "title": "Distributed Computing 8289",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Ivan Johnson",
+            "Alice Jackson"
+        ],
+        "date": "6/6/2023",
+        "numberOfPages": 0,
+        "publisher": "Springer",
+        "title": "Exploring Data 9902",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Bob Jackson",
+            "Eve Smith"
+        ],
+        "citations": 382,
+        "date": "25/7/2016",
+        "journal": "IEEE Transactions",
+        "title": "Climate Science 506",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Dave Thomas"
+        ],
+        "date": "11/2/2023",
+        "numberOfPages": 0,
+        "publisher": "Pearson",
+        "title": "Cryptography Explained 8666",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Heidi Smith"
+        ],
+        "date": "6/11/2019",
+        "numberOfPages": 0,
+        "publisher": "Cambridge Press",
+        "title": "Digital Security 4459",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Grace Thomas",
+            "Ivan Jackson"
+        ],
+        "citations": 88,
+        "date": "14/12/2024",
+        "journal": "IEEE Transactions",
+        "title": "Behavioral Economics 5703",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Bob White"
+        ],
+        "citations": 412,
+        "date": "25/4/2017",
+        "journal": "Science",
+        "title": "Climate Science 8674",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Dave Brown",
+            "Judy Anderson",
+            "Dave Johnson"
+        ],
+        "citations": 93,
+        "date": "22/2/2015",
+        "journal": "Science",
+        "title": "Behavioral Economics 6805",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Judy Smith"
+        ],
+        "date": "23/12/2023",
+        "numberOfPages": 0,
+        "publisher": "Pearson",
+        "title": "Renewable Energy 2497",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Judy White",
+            "Grace Smith",
+            "Ivan Smith"
+        ],
+        "citations": 225,
+        "date": "20/1/2020",
+        "journal": "IEEE Transactions",
+        "title": "Renewable Energy 7629",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Grace White"
+        ],
+        "date": "7/2/2023",
+        "numberOfPages": 0,
+        "publisher": "Pearson",
+        "title": "Digital Security 2816",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Eve Brown"
+        ],
+        "date": "28/1/2021",
+        "numberOfPages": 0,
+        "publisher": "Cambridge Press",
+        "title": "Quantum Mechanics 8633",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Frank Johnson",
+            "Heidi Thomas",
+            "Judy Smith"
+        ],
+        "date": "5/2/2024",
+        "numberOfPages": 0,
+        "publisher": "O'Reilly",
+        "title": "Genomics and You 2124",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Judy Anderson"
+        ],
+        "citations": 217,
+        "date": "15/8/2019",
+        "journal": "Science",
+        "title": "Renewable Energy 653",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Grace White"
+        ],
+        "date": "21/1/2021",
+        "numberOfPages": 0,
+        "publisher": "Cambridge Press",
+        "title": "Quantum Mechanics 6188",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Grace Jackson",
+            "Frank Smith",
+            "Heidi Jackson"
+        ],
+        "citations": 283,
+        "date": "22/5/2017",
+        "journal": "Science",
+        "title": "Deep Learning Systems 8818",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Heidi Smith",
+            "Heidi Thomas"
+        ],
+        "citations": 385,
+        "date": "19/12/2018",
+        "journal": "ACM Journal",
+        "title": "Exploring Data 576",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Ivan Johnson",
+            "Judy Johnson"
+        ],
+        "citations": 322,
+        "date": "13/12/2019",
+        "journal": "Science",
+        "title": "Renewable Energy 411",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Bob Taylor",
+            "Ivan Anderson",
+            "Dave Smith"
+        ],
+        "citations": 434,
+        "date": "26/2/2015",
+        "journal": "Science",
+        "title": "World History 18",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Heidi White",
+            "Grace Anderson",
+            "Carol Smith"
+        ],
+        "citations": 465,
+        "date": "23/11/2018",
+        "journal": "ACM Journal",
+        "title": "Advanced Mathematics 441",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Alice Smith"
+        ],
+        "citations": 374,
+        "date": "7/2/2015",
+        "journal": "Science",
+        "title": "Exploring Data 6815",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Heidi Johnson"
+        ],
+        "date": "18/2/2023",
+        "numberOfPages": 0,
+        "publisher": "O'Reilly",
+        "title": "Renewable Energy 5139",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Ivan Brown"
+        ],
+        "date": "5/1/2018",
+        "numberOfPages": 0,
+        "publisher": "O'Reilly",
+        "title": "Distributed Computing 3267",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Judy Thomas",
+            "Judy Brown"
+        ],
+        "citations": 111,
+        "date": "2/6/2020",
+        "journal": "Nature",
+        "title": "Distributed Computing 1822",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Heidi White",
+            "Heidi Jackson",
+            "Alice Thomas"
+        ],
+        "date": "25/6/2018",
+        "numberOfPages": 0,
+        "publisher": "Springer",
+        "title": "Cryptography Explained 7356",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Alice Taylor",
+            "Frank Brown",
+            "Alice Thomas"
+        ],
+        "date": "3/2/2016",
+        "numberOfPages": 0,
+        "publisher": "Pearson",
+        "title": "Cryptography Explained 5356",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Heidi Anderson"
+        ],
+        "citations": 483,
+        "date": "13/5/2022",
+        "journal": "IEEE Transactions",
+        "title": "Climate Science 9393",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Carol White",
+            "Eve Taylor",
+            "Heidi Johnson"
+        ],
+        "date": "23/7/2020",
+        "numberOfPages": 0,
+        "publisher": "Pearson",
+        "title": "Digital Security 3880",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Dave White",
+            "Bob Smith",
+            "Carol Taylor"
+        ],
+        "citations": 211,
+        "date": "17/11/2018",
+        "journal": "ACM Journal",
+        "title": "Digital Security 6704",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Alice Brown",
+            "Dave Smith",
+            "Dave Thomas"
+        ],
+        "citations": 231,
+        "date": "23/1/2017",
+        "journal": "ACM Journal",
+        "title": "Advanced Mathematics 7304",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Heidi White"
+        ],
+        "citations": 264,
+        "date": "29/2/2024",
+        "journal": "Science",
+        "title": "The Art of Debugging 646",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Ivan Taylor",
+            "Frank Jackson",
+            "Carol Anderson"
+        ],
+        "citations": 373,
+        "date": "7/8/2018",
+        "journal": "IEEE Transactions",
+        "title": "Cryptography Explained 3224",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Bob Johnson",
+            "Dave Jackson"
+        ],
+        "citations": 143,
+        "date": "15/1/2021",
+        "journal": "IEEE Transactions",
+        "title": "Cryptography Explained 3821",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Grace Johnson",
+            "Eve Taylor",
+            "Grace Smith"
+        ],
+        "citations": 332,
+        "date": "5/8/2023",
+        "journal": "ACM Journal",
+        "title": "The Art of Debugging 4044",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Grace Thomas"
+        ],
+        "date": "6/8/2016",
+        "numberOfPages": 0,
+        "publisher": "Cambridge Press",
+        "title": "World History 3528",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Judy Smith"
+        ],
+        "date": "20/1/2017",
+        "numberOfPages": 0,
+        "publisher": "Cambridge Press",
+        "title": "Modern Operating Systems 9884",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Ivan Smith",
+            "Ivan Jackson",
+            "Grace Brown"
+        ],
+        "date": "11/3/2018",
+        "numberOfPages": 0,
+        "publisher": "Springer",
+        "title": "Climate Science 9804",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Dave Jackson",
+            "Carol Taylor",
+            "Carol Brown"
+        ],
+        "citations": 483,
+        "date": "16/11/2024",
+        "journal": "IEEE Transactions",
+        "title": "The Art of Debugging 7296",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Ivan Thomas",
+            "Heidi Taylor"
+        ],
+        "citations": 259,
+        "date": "21/4/2019",
+        "journal": "Science",
+        "title": "Distributed Computing 7237",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Bob Smith"
+        ],
+        "citations": 95,
+        "date": "17/1/2023",
+        "journal": "ACM Journal",
+        "title": "Climate Science 4742",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Grace White",
+            "Carol Smith",
+            "Ivan Smith"
+        ],
+        "citations": 361,
+        "date": "5/5/2015",
+        "journal": "Nature",
+        "title": "Philosophy of Mind 5388",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Ivan Jackson"
+        ],
+        "citations": 166,
+        "date": "2/12/2023",
+        "journal": "Science",
+        "title": "Advanced Mathematics 7639",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Ivan Johnson",
+            "Bob White",
+            "Carol Jackson"
+        ],
+        "citations": 93,
+        "date": "11/9/2023",
+        "journal": "Nature",
+        "title": "Modern Operating Systems 502",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Ivan Johnson",
+            "Heidi Jackson"
+        ],
+        "citations": 447,
+        "date": "30/7/2018",
+        "journal": "Nature",
+        "title": "Exploring Data 316",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Carol Thomas"
+        ],
+        "citations": 233,
+        "date": "6/12/2020",
+        "journal": "ACM Journal",
+        "title": "Deep Learning Systems 4360",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Ivan Taylor",
+            "Ivan Brown"
+        ],
+        "date": "23/10/2019",
+        "numberOfPages": 0,
+        "publisher": "O'Reilly",
+        "title": "Modern Operating Systems 660",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Bob Smith",
+            "Bob Johnson",
+            "Grace Thomas"
+        ],
+        "date": "2/5/2021",
+        "numberOfPages": 0,
+        "publisher": "Springer",
+        "title": "Distributed Computing 7242",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Alice Anderson",
+            "Grace Johnson"
+        ],
+        "citations": 159,
+        "date": "2/6/2018",
+        "journal": "Nature",
+        "title": "Climate Science 7040",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Dave Anderson",
+            "Grace Thomas"
+        ],
+        "citations": 186,
+        "date": "8/5/2016",
+        "journal": "Nature",
+        "title": "Climate Science 4537",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Dave White",
+            "Judy Taylor"
+        ],
+        "date": "10/9/2019",
+        "numberOfPages": 0,
+        "publisher": "O'Reilly",
+        "title": "Renewable Energy 6185",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Heidi Anderson",
+            "Grace Brown",
+            "Heidi White"
+        ],
+        "date": "7/7/2020",
+        "numberOfPages": 0,
+        "publisher": "Springer",
+        "title": "Deep Learning Systems 191",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Eve Smith"
+        ],
+        "citations": 378,
+        "date": "9/10/2015",
+        "journal": "Science",
+        "title": "Philosophy of Mind 1108",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Judy Smith"
+        ],
+        "date": "15/9/2015",
+        "numberOfPages": 0,
+        "publisher": "Springer",
+        "title": "Digital Security 3228",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Ivan Johnson"
+        ],
+        "citations": 73,
+        "date": "1/2/2020",
+        "journal": "Nature",
+        "title": "Foundations of AI 3411",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Grace White",
+            "Dave White"
+        ],
+        "date": "25/5/2018",
+        "numberOfPages": 0,
+        "publisher": "O'Reilly",
+        "title": "Philosophy of Mind 435",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Dave White",
+            "Bob Jackson"
+        ],
+        "citations": 157,
+        "date": "11/8/2022",
+        "journal": "Science",
+        "title": "The Art of Debugging 5868",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Eve White",
+            "Ivan Brown"
+        ],
+        "date": "11/10/2015",
+        "numberOfPages": 0,
+        "publisher": "O'Reilly",
+        "title": "Cryptography Explained 4178",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Carol Johnson"
+        ],
+        "date": "5/4/2019",
+        "numberOfPages": 0,
+        "publisher": "Cambridge Press",
+        "title": "Advanced Mathematics 2481",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Ivan Smith",
+            "Carol Thomas",
+            "Frank Brown"
+        ],
+        "date": "3/10/2019",
+        "numberOfPages": 0,
+        "publisher": "O'Reilly",
+        "title": "Digital Security 1013",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Bob White",
+            "Grace Jackson"
+        ],
+        "date": "24/7/2017",
+        "numberOfPages": 0,
+        "publisher": "O'Reilly",
+        "title": "Genomics and You 5748",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Eve Brown"
+        ],
+        "date": "26/1/2017",
+        "numberOfPages": 0,
+        "publisher": "Springer",
+        "title": "Philosophy of Mind 4239",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Bob Anderson",
+            "Frank Jackson",
+            "Carol Johnson"
+        ],
+        "citations": 68,
+        "date": "24/2/2015",
+        "journal": "IEEE Transactions",
+        "title": "Quantum Mechanics 111",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Heidi Johnson"
+        ],
+        "date": "22/2/2017",
+        "numberOfPages": 0,
+        "publisher": "Cambridge Press",
+        "title": "Advanced Mathematics 5343",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Frank Anderson"
+        ],
+        "citations": 34,
+        "date": "1/4/2015",
+        "journal": "IEEE Transactions",
+        "title": "Deep Learning Systems 6485",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Judy White"
+        ],
+        "citations": 155,
+        "date": "23/4/2021",
+        "journal": "Science",
+        "title": "Quantum Mechanics 9477",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Alice Johnson"
+        ],
+        "citations": 17,
+        "date": "16/2/2019",
+        "journal": "Science",
+        "title": "World History 8232",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Frank Jackson"
+        ],
+        "citations": 92,
+        "date": "4/3/2020",
+        "journal": "Nature",
+        "title": "Behavioral Economics 1075",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Judy Thomas",
+            "Carol Smith"
+        ],
+        "citations": 399,
+        "date": "20/11/2019",
+        "journal": "ACM Journal",
+        "title": "The Art of Debugging 6830",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Bob Jackson"
+        ],
+        "citations": 99,
+        "date": "14/10/2021",
+        "journal": "ACM Journal",
+        "title": "Cryptography Explained 7404",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Eve Smith",
+            "Heidi Brown"
+        ],
+        "date": "3/10/2022",
+        "numberOfPages": 0,
+        "publisher": "Springer",
+        "title": "Deep Learning Systems 9310",
+        "type": "Book"
+    },
+    {
+        "authors": [
+            "Carol Jackson",
+            "Bob Jackson",
+            "Grace White"
+        ],
+        "citations": 99,
+        "date": "14/12/2017",
+        "journal": "Science",
+        "title": "Exploring Data 1419",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Carol Jackson"
+        ],
+        "citations": 132,
+        "date": "2/10/2016",
+        "journal": "IEEE Transactions",
+        "title": "Advanced Mathematics 4672",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Bob Jackson"
+        ],
+        "citations": 178,
+        "date": "19/9/2016",
+        "journal": "ACM Journal",
+        "title": "Foundations of AI 1861",
+        "type": "Article"
+    },
+    {
+        "authors": [
+            "Alice Brown",
+            "Grace Jackson",
+            "Carol Brown"
+        ],
+        "date": "9/11/2017",
+        "numberOfPages": 0,
+        "publisher": "O'Reilly",
+        "title": "Climate Science 3596",
+        "type": "Book"
+    }
+]
