@@ -5,6 +5,7 @@
 #include "Publication.h"
 
 #include <utility>
+#include <QJsonArray>
 
 Publication::Publication(const std::vector<std::string> &authors, std::string title, const Date &publicationDate)
         : authors(authors), title(std::move(title)), publicationDate(publicationDate) {}
@@ -43,4 +44,14 @@ std::string Publication::join(const std::vector<std::string> &vec, const std::st
         oss << vec[i];
     }
     return oss.str();
+}
+
+QJsonObject Publication::toJSON() const {
+    QJsonObject object;
+    object["type"] = QString::fromStdString(getType());
+    object["date"] = QString::fromStdString(publicationDate.toString());
+    QJsonArray authorsVec;
+    for (const auto &author: authors) authorsVec.push_back(QString::fromStdString(author));
+    object["authors"] = authorsVec;
+    return object;
 }

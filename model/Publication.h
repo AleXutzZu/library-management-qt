@@ -7,6 +7,7 @@
 
 #include "../model/Publication.h"
 #include <QAbstractTableModel>
+#include <QJsonObject>
 #include <string>
 #include <vector>
 #include "Date.h"
@@ -32,6 +33,8 @@ public:
     [[nodiscard]] virtual std::string getType() const = 0;
 
     [[nodiscard]] virtual std::string toString() const;
+
+    [[nodiscard]] virtual QJsonObject toJSON() const;
 
     friend std::ostream &operator<<(std::ostream &os, const Publication &publication);
 };

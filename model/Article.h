@@ -22,7 +22,9 @@ public:
 
     [[nodiscard]] std::string getType() const override;
 
-    std::string toString() const override;
+    [[nodiscard]] std::string toString() const override;
+
+    QJsonObject toJSON() const override;
 };
 
 struct ArticleUpdate : public PublicationUpdate {

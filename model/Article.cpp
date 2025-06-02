@@ -26,6 +26,13 @@ std::string Article::toString() const {
     return Publication::toString() + "," + "NA" + "," + "NA" + "," + std::to_string(citations) + "," + journal;
 }
 
+QJsonObject Article::toJSON() const {
+    auto baseObject = Publication::toJSON();
+    baseObject["journal"] = QString::fromStdString(journal);
+    baseObject["citations"] = citations;
+    return baseObject;
+}
+
 std::shared_ptr<Article> ArticleUpdate::intoArticle(const Article &article) const {
     std::string newTitle = title.value_or(article.getTitle());
     std::vector<std::string> newAuthors = authors.value_or(article.getAuthors());

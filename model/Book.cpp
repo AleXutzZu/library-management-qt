@@ -26,6 +26,13 @@ std::string Book::toString() const {
     return Publication::toString() + "," + std::to_string(numberOfPages) + "," + publisher + ",NA,NA";
 }
 
+QJsonObject Book::toJSON() const {
+    auto baseObject = Publication::toJSON();
+    baseObject["publisher"] = QString::fromStdString(publisher);
+    baseObject["numberOfPages"] = numberOfPages;
+    return baseObject;
+}
+
 std::shared_ptr<Book> BookUpdate::intoBook(const Book &book) const {
     std::string newTitle = title.value_or(book.getTitle());
     std::vector<std::string> newAuthors = authors.value_or(book.getAuthors());
