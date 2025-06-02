@@ -50,6 +50,7 @@ QJsonObject Publication::toJSON() const {
     QJsonObject object;
     object["type"] = QString::fromStdString(getType());
     object["date"] = QString::fromStdString(publicationDate.toString());
+    object["title"] = QString::fromStdString(title);
     QJsonArray authorsVec;
     for (const auto &author: authors) authorsVec.push_back(QString::fromStdString(author));
     object["authors"] = authorsVec;
