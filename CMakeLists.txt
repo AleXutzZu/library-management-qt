@@ -44,6 +44,8 @@ add_executable(OOP_Project_LibraryManagement main.cpp
         ui/DateEditDelegate.h
         ui/PublicationFilterProxyModel.cpp
         ui/PublicationFilterProxyModel.h
+        repository/JsonPublicationRepository.cpp
+        repository/JsonPublicationRepository.h
 )
 target_link_libraries(OOP_Project_LibraryManagement
         Qt::Core
