@@ -18,6 +18,7 @@
 #include "../controller/PublicationController.h"
 #include "PublicationTableModel.h"
 #include "ActionButtonsDelegate.h"
+#include "PublicationFilterProxyModel.h"
 
 class UserInterface : public QWidget {
 Q_OBJECT
@@ -42,6 +43,7 @@ private:
     QComboBox *selectPublicationType;
     QPushButton *addButton;
     QPushButton *undoButton;
+    PublicationFilterProxyModel *proxy;
 
     //Table
     PublicationTableModel *table;

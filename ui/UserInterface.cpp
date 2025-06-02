@@ -80,9 +80,9 @@ void UserInterface::setUpUI() {
     QHBoxLayout * buttonsLayout = new QHBoxLayout;
 
     undoButton = new QPushButton("Undo", this);
-
+    filterAndButton = new QRadioButton("Require all fields (filtering)", this);
     buttonsLayout->addWidget(addButton, 1);
-    buttonsLayout->addStretch(1);
+    buttonsLayout->addWidget(filterAndButton, 1);
     buttonsLayout->addWidget(undoButton, 1);
 
     formWithButtonLayout->addLayout(buttonsLayout);
@@ -95,7 +95,10 @@ void UserInterface::setUpUI() {
 
     QTableView *tableView = new QTableView(this);
 
-    tableView->setModel(table);
+    proxy = new PublicationFilterProxyModel(this);
+
+    proxy->setSourceModel(table);
+    tableView->setModel(proxy);
     tableView->setItemDelegateForColumn(PublicationTableModel::Columns::COL_ACTIONS, actionButtonsDelegate);
     tableView->setItemDelegateForColumn(PublicationTableModel::Columns::COL_DATE, dateEditDelegate);
 
@@ -141,6 +144,14 @@ void UserInterface::connectSignals() {
     connect(actionButtonsDelegate, &ActionButtonsDelegate::deleteClicked, this,
             &UserInterface::onDeleteActionButtonClicked);
     connect(undoShortcut, &QShortcut::activated, undoButton, &QPushButton::click);
+
+    connect(titleEdit, &QLineEdit::textChanged, proxy, &PublicationFilterProxyModel::setTitleFilter);
+    connect(selectPublicationType, &QComboBox::currentTextChanged, proxy, &PublicationFilterProxyModel::setTypeFilter);
+    connect(authorsEdit, &QLineEdit::textChanged, proxy, &PublicationFilterProxyModel::setAuthorFilter);
+
+    connect(filterAndButton, &QRadioButton::toggled, this, [this](bool checked) {
+        proxy->setLogicalOperator(checked ? PublicationFilterProxyModel::And : PublicationFilterProxyModel::Or);
+    });
 }
 
 void UserInterface::onAddButtonClicked() {

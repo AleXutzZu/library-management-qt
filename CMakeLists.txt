@@ -42,6 +42,8 @@ add_executable(OOP_Project_LibraryManagement main.cpp
         ui/ActionButtonsDelegate.h
         ui/DateEditDelegate.cpp
         ui/DateEditDelegate.h
+        ui/PublicationFilterProxyModel.cpp
+        ui/PublicationFilterProxyModel.h
 )
 target_link_libraries(OOP_Project_LibraryManagement
         Qt::Core
