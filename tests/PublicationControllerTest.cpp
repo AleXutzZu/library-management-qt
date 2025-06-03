@@ -12,19 +12,18 @@ Date makeDate(int d, int m, int y) {
 // Fixture
 class PublicationControllerTest : public ::testing::Test {
 protected:
-    BasePublicationRepository *repo{};
-    PublicationController *controller{};
+    std::unique_ptr<BasePublicationRepository> repo;
+    std::unique_ptr<PublicationController> controller;
 
     void SetUp() override {
-        auto jsonRepo = new JsonPublicationRepository();
-        repo = jsonRepo;
+        repo = std::make_unique<JsonPublicationRepository>();
 
-        controller = new PublicationController(*repo);
+        controller = std::make_unique<PublicationController>(*repo);
     }
 
     void TearDown() override {
-        delete controller;
-        delete repo;
+        repo.reset();
+        controller.reset();
     }
 };
 
